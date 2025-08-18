@@ -16,8 +16,8 @@
     <h3 style="grid-column: span 2">Hours</h3>
 
     {% for day in hours.schedule %}
-        <p class="{{ openHours.getCurrentDay(day) }}" >{{ day.title }}</p>
-        <p class="{{ openHours.getCurrentDay(day) }}">{{ openHours.getDisplayHours(day) }}</p>
+        <p class="{{ hoursFunctions.getCurrentDay(day) }}" >{{ day.title }}</p>
+        <p class="{{ hoursFunctions.getCurrentDay(day) }}">{{ hoursFunctions.getDisplayHours(day) }}</p>
     {% endfor %}
 
   </div>
