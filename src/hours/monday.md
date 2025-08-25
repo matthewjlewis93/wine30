@@ -1,0 +1,5 @@
+---
+title: Monday
+open: false
+order: 1
+---

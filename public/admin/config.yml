@@ -1,0 +1,15 @@
+backend: 
+  name: git-gateway
+  branch: main
+media_folder: images
+public_folder: /public
+collections:
+  - name: "hours"
+    label: "Hours"
+    folder: "/hours"
+    create: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Open", name: "open", widget: "boolean" }
+      - { label: "Open Time", name: "openTime", widget: "string" }
+      - { label: "Close Time", name: "closeTime", widget: "string" }

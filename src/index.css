@@ -19,7 +19,7 @@
       }
 
       .current-day {
-        background-color: #9b68ffaa;
+        background-color: hsla(260, 100%, 70%, 0.667);
       }
 
       #hours {
