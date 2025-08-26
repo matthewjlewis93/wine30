@@ -25,7 +25,6 @@ module.exports = {
   sortDays(hoursObj) {
     let dayArr = Object.values(hoursObj);
     dayArr.sort((a,b) => a.order - b.order)
-    return Object.values(dayArr);
-    // return "hello";
+    return dayArr;
   }
 };
