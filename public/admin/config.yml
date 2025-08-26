@@ -1,6 +1,8 @@
 backend: 
   name: github
   repo: matthewjlewis93/wine30
+  base_url: 'https://wine30.netlify.app/'
+  client_id: 'Ov23lieJGQz12EnpShlB'
 media_folder: images
 public_folder: /public
 collections:
