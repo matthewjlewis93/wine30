@@ -1,7 +1,0 @@
----
-title: Wednesday
-open: true
-openTime: 1 P.M.
-closeTime: 9 P.M.
-order: 3
----

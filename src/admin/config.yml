@@ -4,11 +4,10 @@ backend:
 media_folder: images
 public_folder: /public
 collections:
-  - name: storehours
-    label: Hours
-    folder: "src/_data/hours"
-    create: true
-    extension: "json"
+  - name: "storehours"
+    label: "Hours"
+    folder: "_includes/_partials/hours"
+    create: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Open", name: "open", widget: "boolean" }
