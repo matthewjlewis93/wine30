@@ -7,7 +7,7 @@ collections:
   - name: storehours
     label: Hours
     folder: "src/_data/hours"
-    create: true
+    create: false
     extension: "json"
     fields:
       - { label: "Title", name: "title", widget: "string" }
