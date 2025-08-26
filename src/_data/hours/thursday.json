@@ -1,6 +1,6 @@
 {
   "title": "Thursday",
-  "open": true,
+  "open": false,
   "openTime": "1 P.M.",
   "closeTime": "9 P.M.",
   "order": 4,
