@@ -1,25 +1,12 @@
-<section id="hours">
-  <div
-    style="
-      color: white;
-      padding: 5px 0px;
-      margin: 10px;
-      width: 80%;
-      min-width: fit-content;
-      height: 80%;
-      background-color: #2b008090;
-      display: grid;
-      grid-template-columns: auto max-content;
-      backdrop-filter: blur(3px);
-    "
-  >
+<section id="hours-container">
+  <div id = "hours-div">
     <h3 style="grid-column: span 2">Hours</h3>
 
         
 
     {% for day in hoursFunctions.sortDays(hours) %}
-    <p class="{{ hoursFunctions.getCurrentDay(day) }}">{{ day.title }}</p>
-    <p class="{{ hoursFunctions.getCurrentDay(day) }}">
+    <p class="schedule-day" >{{ day.title }}</p>
+    <p class="schedule-day" >
       {{ hoursFunctions.getDisplayHours(day) }}
     </p>
     {% endfor %} 

@@ -1,15 +1,21 @@
 backend: 
   name: github
   repo: matthewjlewis93/wine30
+  api_root: https://api.github.com
+  base_url: https://api.netlify.com/
+  auth_endpoint: auth
 media_folder: images
 public_folder: /public
 collections:
-  - name: "storehours"
-    label: "Hours"
+  - name: storehours
+    label: Hours
     folder: "src/_data/hours"
     create: false
+    extension: "json"
+    sortable_fields: ["order"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Open", name: "open", widget: "boolean" }
       - { label: "Open Time", name: "openTime", widget: "string" }
       - { label: "Close Time", name: "closeTime", widget: "string" }
+      - { label: "Order", name: "order", widget: "hidden"}
