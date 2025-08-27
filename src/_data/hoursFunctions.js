@@ -28,6 +28,6 @@ module.exports = {
     return dayArr;
   },
   displayCurrentDate() {
-    return new Date().getDay();
+    return new Date();
   }
 };
