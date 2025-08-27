@@ -26,8 +26,5 @@ module.exports = {
     let dayArr = Object.values(hoursObj);
     dayArr.sort((a,b) => a.order - b.order)
     return dayArr;
-  },
-  displayCurrentDate() {
-    return new Date();
   }
 };
