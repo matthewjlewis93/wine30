@@ -15,10 +15,6 @@
   >
     <h3 style="grid-column: span 2">Hours</h3>
 
-    <!-- {% for v in hoursFunctions.sortDays(hours) %}{{ v.title}}, {% endfor %} -->
-
-    <!-- {{ hoursFunctions.sortDays(hours) }} -->
-
     {% for day in hoursFunctions.sortDays(hours) %}
     <p class="{{ hoursFunctions.getCurrentDay(day) }}">{{ day.title }}</p>
     <p class="{{ hoursFunctions.getCurrentDay(day) }}">
@@ -26,15 +22,5 @@
     </p>
     {% endfor %} 
     
-    
-    <!-- {% for day in collections.hourscollection %}
-    <p>collection</p>
-    <p class="{{ hoursFunctions.getCurrentDay(day.data) }}">
-      {{ day.data.title }}
-    </p>
-    <p class="{{ hoursFunctions.getCurrentDay(day.data) }}">
-      {{ hoursFunctions.getDisplayHours(day.data) }}
-    </p>
-    {% endfor %} -->
   </div>
 </section>

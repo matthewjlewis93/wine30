@@ -12,8 +12,10 @@ collections:
     folder: "src/_data/hours"
     create: false
     extension: "json"
+    sortable_fields: ["order"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Open", name: "open", widget: "boolean" }
       - { label: "Open Time", name: "openTime", widget: "string" }
       - { label: "Close Time", name: "closeTime", widget: "string" }
+      - { label: "Order", name: "order", widget: "hidden"}
