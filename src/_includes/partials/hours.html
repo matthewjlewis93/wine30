@@ -4,10 +4,10 @@
 
         
 
-    {% for day in hoursFunctions.sortDays(hours) %}
+    {% for day in helperFunctions.sortDays(hours) %}
     <p class="schedule-day" >{{ day.title }}</p>
     <p class="schedule-day" >
-      {{ hoursFunctions.getDisplayHours(day) }}
+      {{ helperFunctions.getDisplayHours(day) }}
     </p>
     {% endfor %} 
     

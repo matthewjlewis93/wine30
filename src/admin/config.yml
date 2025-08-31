@@ -4,15 +4,28 @@ backend:
   api_root: https://api.github.com
   base_url: https://api.netlify.com/
   auth_endpoint: auth
-media_folder: images
+media_folder: src/images
 public_folder: /public
 collections:
+  - name: events
+    label: Events
+    folder: "src/_data/events"
+    create: true
+    extension: json
+    # identifier_field: "date"
+    slug: "{{year}}-{{month}}-{{day}}_{{hour}}-{{minute}}-{{second}}-{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
   - name: storehours
     label: Hours
     folder: "src/_data/hours"
     create: false
     extension: "json"
     sortable_fields: ["order"]
+    delete: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Open", name: "open", widget: "boolean" }
