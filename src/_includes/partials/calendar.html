@@ -1,7 +1,16 @@
 <h3>Calendar</h3>
 
 <section id="calendar">
-{% for file, event in events %}
+
+    <p>Sun</p>
+    <p>Mon</p>
+    <p>Tues</p>
+    <p>Wed</p>
+    <p>Thurs</p>
+    <p>Fri</p>
+    <p>Sat</p>
+
+    {% for file, event in events %}
     {% set event = helperFunctions.dateProcessor(event) %}
         <p hidden date={{event.year}}-{{event.month}}-{{event.day}} >{{ event.title }}</p>
         <p hidden >{{ event.description }}</p>

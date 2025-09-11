@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  background-image: linear-gradient(#f0e6fe, #8d53ff, #3c1979);
+  background-image: linear-gradient(white, #caa8fa);
   background-size: contain;
   height: 100vh;
 }
@@ -40,14 +40,26 @@ p {
 }
 
 #hours-div {
-  color: white;
+  /* color: white; */
   padding: 5px 0px;
   margin: 10px;
   width: 80%;
   min-width: fit-content;
   height: 80%;
-  background-color: #2b008090;
+  /* background-color: #2b008090; */
+  background-color: hsl(266, 92%, 90%, 70%);
   display: grid;
   grid-template-columns: auto max-content;
   backdrop-filter: blur(3px);
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 5px;
+}
+
+#calendar p {
+  padding: 0;
+  font-size: 16px;
 }
