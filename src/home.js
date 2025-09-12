@@ -20,7 +20,9 @@ createDateObj = (dateIndex) => {
 };
 
 createCalendar = (dateObject) => {
-  document.getElementById("calendar").innerHTML = `<p>Sun</p>
+  document.getElementById(
+    "calendar"
+  ).innerHTML = `<h3 style="grid-column: span 7;">Calendar</h3><p>Sun</p>
     <p>Mon</p>
     <p>Tues</p>
     <p>Wed</p>
@@ -30,10 +32,13 @@ createCalendar = (dateObject) => {
   const calendarArray = [];
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
     if (i <= 0) {
-      calendarArray.push("<p></p>");
+      calendarArray.push("<div class='calendar-day' ></div");
     } else {
-      calendarArray.push(`<p>${i}</p>`);
+      calendarArray.push(`<div class='calendar-day' ><p>${i}</p></div>`);
     }
+  }
+  while ( calendarArray.length % 7 != 0 ) {
+    calendarArray.push("<div class='calendar-day' ></div>");
   }
   calendarArray.forEach(
     (e) => (document.getElementById("calendar").innerHTML += e)
@@ -42,3 +47,4 @@ createCalendar = (dateObject) => {
 };
 
 createCalendar(createDateObj(new Date().getMonth()));
+// createCalendar(createDateObj(7));
