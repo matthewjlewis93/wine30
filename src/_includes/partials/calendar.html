@@ -1,18 +1,21 @@
 
 <section id="calendar">
-    <h3 style="grid-column: span 7;">Calendar</h3>
-
-    <p>Sun</p>
-    <p>Mon</p>
-    <p>Tues</p>
-    <p>Wed</p>
-    <p>Thurs</p>
-    <p>Fri</p>
-    <p>Sat</p>
-
-    {% for file, event in events %}
-    {% set event = helperFunctions.dateProcessor(event) %}
-        <p hidden date={{event.year}}-{{event.month}}-{{event.day}} >{{ event.title }}</p>
-        <p hidden >{{ event.description }}</p>
-    </section>
-{% endfor %}
+    <div id="calendar-head">
+        <h3 style="grid-column: span 7;">Calendar</h3>
+    
+        <p>Sun</p>
+        <p>Mon</p>
+        <p>Tues</p>
+        <p>Wed</p>
+        <p>Thurs</p>
+        <p>Fri</p>
+        <p>Sat</p>
+    </div>
+    <div id="calendar-body">
+        {% for file, event in events %}
+        {% set event = helperFunctions.dateProcessor(event) %}
+            <p hidden date={{event.year}}-{{event.month}}-{{event.day}} >{{ event.title }}</p>
+            <p hidden >{{ event.description }}</p>
+        </section>
+    {% endfor %}
+    </div>

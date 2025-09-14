@@ -6,7 +6,7 @@
   }
 });
 
-createDateObj = (dateIndex) => {
+createDateObj = (dateIndex, yearIndex) => {
   const dateObj = {};
   let currentMonth = new Date(
     `${new Date().getFullYear()}, ${dateIndex + 1}, 1`
@@ -21,14 +21,8 @@ createDateObj = (dateIndex) => {
 
 createCalendar = (dateObject) => {
   document.getElementById(
-    "calendar"
-  ).innerHTML = `<h3 style="grid-column: span 7;">Calendar</h3><p>Sun</p>
-    <p>Mon</p>
-    <p>Tues</p>
-    <p>Wed</p>
-    <p>Thurs</p>
-    <p>Fri</p>
-    <p>Sat</p>`;
+    "calendar-body"
+  ).innerHTML = '';
   const calendarArray = [];
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
     if (i <= 0) {
@@ -41,10 +35,11 @@ createCalendar = (dateObject) => {
     calendarArray.push("<div class='calendar-day' ></div>");
   }
   calendarArray.forEach(
-    (e) => (document.getElementById("calendar").innerHTML += e)
+    (e) => (document.getElementById("calendar-body").innerHTML += e)
   );
   return calendarArray;
 };
 
-createCalendar(createDateObj(new Date().getMonth()));
-// createCalendar(createDateObj(7));
+let monthOffset = 0;
+
+createCalendar(createDateObj(new Date().getMonth(), new Date().getFullYear()));
