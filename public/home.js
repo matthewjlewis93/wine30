@@ -6,11 +6,14 @@
   }
 });
 
-createDateObj = (dateIndex, yearIndex) => {
+const monthArray = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+createDateObj = (offset) => {
   const dateObj = {};
   let currentMonth = new Date(
-    `${new Date().getFullYear()}, ${dateIndex + 1}, 1`
+    `${new Date().getFullYear()}, ${new Date().getMonth()+1}, 1`
   );
+  currentMonth.setMonth(currentMonth.getMonth() + offset);
   dateObj["Current Month"] = currentMonth;
   dateObj["Day of 1"] = currentMonth.getDay();
   currentMonth.setMonth(currentMonth.getMonth() + 1);
@@ -28,7 +31,15 @@ createCalendar = (dateObject) => {
     if (i <= 0) {
       calendarArray.push("<div class='calendar-day' ></div");
     } else {
-      calendarArray.push(`<div class='calendar-day' ><p>${i}</p></div>`);
+      calendarArray.push(
+        `<div class='calendar-day'><p class=${
+          monthOffset === 0
+            ? new Date().getDate() === i
+              ? " todays-date"
+              : ""
+            : ""
+        }>${i}</p></div>`
+      );
     }
   }
   while ( calendarArray.length % 7 != 0 ) {
@@ -37,9 +48,15 @@ createCalendar = (dateObject) => {
   calendarArray.forEach(
     (e) => (document.getElementById("calendar-body").innerHTML += e)
   );
+  document.getElementById("month-name").innerText = `${monthArray[dateObject["Current Month"].getMonth()]} ${dateObject["Current Month"].getFullYear()}`
   return calendarArray;
 };
 
+changeMonth = (amount) => {
+  monthOffset += amount;
+  createCalendar(createDateObj(monthOffset));
+}
+
 let monthOffset = 0;
 
-createCalendar(createDateObj(new Date().getMonth(), new Date().getFullYear()));
+createCalendar(createDateObj(monthOffset));
