@@ -1,11 +1,9 @@
 
 <section id="calendar">
-    <h3 style="grid-column: span 7;">Calendar</h3>
-    <button style="display: inline" onclick="changeMonth(-1)"><</button><button style="display: inline" onclick="changeMonth(1)">></button>
     <div id="calendar-head">
+        <h2 style="grid-column: span 7;">Event Calendar</h2>
+        <span></span><button style="display: inline" onclick="changeMonth(-1)"><</button><h4 style="grid-column: span 3; text-align: center;" id="month-name"></h4><button style="display: inline" onclick="changeMonth(1)">></button><span></span>
 
-        <h4 style="grid-column: span 7; text-align: center;" id="month-name"></h4>
-    
         <h5 class="day-name">Sun</h5>
         <h5 class="day-name">Mon</h5>
         <h5 class="day-name">Tues</h5>
@@ -13,6 +11,7 @@
         <h5 class="day-name">Thurs</h5>
         <h5 class="day-name">Fri</h5>
         <h5 class="day-name">Sat</h5>
+
     </div>
     <div id="calendar-body">
         {% for file, event in events %}

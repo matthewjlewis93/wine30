@@ -6,7 +6,7 @@
   }
 });
 
-const monthArray = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const monthArray = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 createDateObj = (offset) => {
   const dateObj = {};
