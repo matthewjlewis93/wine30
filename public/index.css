@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   background-image: linear-gradient(white, #caa8fa);
-  background-size: contain;
+  /* background-size: contain; */
   /* height: 100vh; */
 }
 h2 {
@@ -47,14 +47,12 @@ p {
 }
 
 #hours-div {
-  /* color: white; */
   padding: 5px 0px;
   margin: 10px;
   width: 80%;
   max-width: 1000px;
   min-width: fit-content;
   height: 80%;
-
   background-color: hsl(266, 92%, 90%, 70%);
   display: grid;
   grid-template-columns: auto max-content;
@@ -63,18 +61,19 @@ p {
 
 #calendar {
   padding: 10px;
-  background-color: white;
+  margin: 1rem;
+  background-color: #ffffffb0;
+  border: 6px solid white;
+  border-radius: 5px;
   min-height: 775px;
 }
 
 #calendar>* {
   display: grid;
-  gap: 2px;
   grid-template-columns: repeat(7, 1fr);
 }
 
 #calendar-body {
-  /* border: 2px solid white; */
   background-color: white;
 }
 
@@ -84,7 +83,10 @@ p {
 }
 
 .calendar-day {
-  background-color: hsl(265, 89%, 88%);
+  background-color: hsl(265, 89%, 92%);
+  border-top: 0px;
+  border-bottom: 2px solid white;
+  border-inline: 1px solid white;
   position: relative;
   height: 100px;
 }
@@ -101,20 +103,26 @@ p {
 }
 
 .todays-date {
-  background-color: #00000050;
+  background-color: #00000090;
   color: white;
 }
 
 .day-name {
   margin: 1px 0px;
   font-size: 20px;
+  color: white;
   text-align: center;
   padding-left: 5px;
-  background-color: hsl(265, 89%, 75%);
+  background-color: hsl(265, 89%, 65%);
+  border: 1px solid white;
 }
 
 #month-name {
   margin: 0;
   font-size: 25px;
   font-family: EB Garamond, serif;
+}
+
+svg {
+  vertical-align: middle;
 }
