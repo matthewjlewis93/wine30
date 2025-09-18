@@ -10,16 +10,16 @@ body {
 }
 h2 {
   font-family: Playfair;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-style: italic;
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin: 2px 0px;
-  letter-spacing: 10px;
+  /* letter-spacing: 0.7rem; */
 }
 h3 {
   font-family: EB Garamond, serif;
   font-size: 3.5rem;
-  letter-spacing: 10px;
+  letter-spacing: 0.6rem;
   font-weight: 100;
   margin: 5px;
 }
@@ -28,6 +28,48 @@ p {
   font-size: 1.8rem;
   margin: 0;
   padding-inline: 1.5rem;
+}
+
+#title {
+  background: url("./images/bar-7-16.jpg");
+  background-size: cover;
+  background-position-y: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#title>img {
+  background-color: #00000025;
+  width: 100%;
+  margin: 1.8rem 0px;
+}
+
+#offerings-header {
+  background: url("./images/Wine30-6.jpg");
+  background-size: cover;
+  background-position-y: 90% ;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#offerings-header>h2 {
+  margin: 4rem 0px 0px 0px;
+  padding: 1rem 0.75rem 1rem 0.75rem;
+  width: 88%;
+  background-color: #ffffff99;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+#offerings-body {
+  height: 200px;
+  width: 88%;
+  margin-inline: auto;
+  padding: 0px 0.75rem;
+  background-color: #ffffff99;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .current-day {
@@ -44,6 +86,7 @@ p {
   background-position: center center;
   margin: 0.5rem;
   border: 1rem solid transparent;
+  border-inline: 3rem solid transparent;
   background: url("./images/Wine-30-BKG-scaled.jpg") border-box;
   background-size: cover;
   background-position: center center;
@@ -65,10 +108,10 @@ p {
 }
 
 #calendar {
-  padding: 0.5rem;
+  padding: 0.3rem;
   margin: 0.5rem;
   background-color: #ffffffb0;
-  border: 6px solid white;
+  border: 0.6rem solid white;
   border-radius: 5px;
   min-height: 815px;
 }
@@ -139,5 +182,9 @@ svg {
 @media (max-width: 750px) {
   :root {
     font-size: xx-small;
+  }
+
+  #calendar {
+    min-height: 700px;
   }
 }
