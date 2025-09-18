@@ -32,3 +32,16 @@ collections:
       - { label: "Open Time", name: "openTime", widget: "string" }
       - { label: "Close Time", name: "closeTime", widget: "string" }
       - { label: "Order", name: "order", widget: "hidden"}
+
+  - name: offerings
+    label: Offerings
+    folder: "src/_data/offerings"
+    create: true
+    extension: "json"
+    sortable_fields: ["order"]
+    delete: true
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Display Order", name: "order", widget: "number" }
+      - { label: "Image", name: "image", required: false, widget: "image" }

@@ -12,7 +12,7 @@ h2 {
   font-family: Playfair;
   /* font-weight: 600; */
   font-style: italic;
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 2px 0px;
   /* letter-spacing: 0.7rem; */
 }
@@ -39,8 +39,9 @@ p {
   align-items: center;
 }
 #title>img {
-  background-color: #00000025;
+  /* background-color: #00000025; */
   width: 100%;
+  max-width: 1500px;
   margin: 1.8rem 0px;
 }
 
@@ -63,7 +64,8 @@ p {
   border-top-right-radius: 8px;
 }
 #offerings-body {
-  height: 200px;
+  min-height: 200px;
+  display: flex;
   width: 88%;
   margin-inline: auto;
   padding: 0px 0.75rem;
@@ -84,7 +86,6 @@ p {
   z-index: 1;
   background-size: cover;
   background-position: center center;
-  margin: 0.5rem;
   border: 1rem solid transparent;
   border-inline: 3rem solid transparent;
   background: url("./images/Wine-30-BKG-scaled.jpg") border-box;
@@ -179,9 +180,9 @@ svg {
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   :root {
-    font-size: xx-small;
+    font-size: x-small;
   }
 
   #calendar {

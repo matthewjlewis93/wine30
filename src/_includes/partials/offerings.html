@@ -2,5 +2,11 @@
     <h2>Our Offerings</h2>
 </div>
 <div id="offerings-body">
-
+    {% for item in helperFunctions.sortDays(offerings) %}
+        <div>
+            <p>{{ item.title }}</p>
+            <p>{{ item.description }}</p>
+        </div>
+        <img src={{item.image}} />
+    {% endfor %}
 </div>
