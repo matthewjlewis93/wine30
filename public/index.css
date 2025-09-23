@@ -38,8 +38,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-#title>img {
-  /* background-color: #00000025; */
+#title > img {
   width: 100%;
   max-width: 1500px;
   margin: 1.8rem 0px;
@@ -48,14 +47,14 @@ p {
 #offerings-header {
   background: url("./images/Wine30-6.jpg");
   background-size: cover;
-  background-position-y: 90% ;
+  background-position-y: 90%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: end;
 }
 
-#offerings-header>h2 {
+#offerings-header > h2 {
   margin: 4rem 0px 0px 0px;
   padding: 1rem 0.75rem 1rem 0.75rem;
   width: 88%;
@@ -64,16 +63,52 @@ p {
   border-top-right-radius: 8px;
 }
 #offerings-body {
-  min-height: 200px;
-  display: flex;
   width: 88%;
-  margin-inline: auto;
-  padding: 0px 0.75rem;
+  margin: 0px auto;
+  padding: 0px 0.75rem 5px 0.75rem;
   background-color: #ffffff99;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
+.offering-img {
+  order: 2;
+  width: 100%;
+  max-width: 500px;
+  justify-self: right;
+  aspect-ratio: 1;
+}
+
+.offering-item {
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  gap: 10px;
+}
+.offering-item:nth-child(even) {
+  grid-template-columns: 40% 1fr;
+}
+
+.offering-item:not(:first-child) {
+  margin: 2rem 0px;
+}
+.offering-item p {
+  order: 1;
+  font-size: 1.5rem;
+  padding: 0px;
+}
+.offering-item:nth-child(even) img {
+  order: -1;
+  justify-self: left;
+}
+.offering-divider {
+  min-width: 100%;
+  margin: 0;
+  position: relative;
+  bottom: 1px;
+  border-color: #00000066;
+  grid-column: span 2;
+  order: -3;
+}
 .current-day {
   background-color: hsla(260, 100%, 70%, 0.667);
 }
@@ -117,7 +152,7 @@ p {
   min-height: 815px;
 }
 
-#calendar>* {
+#calendar > * {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
@@ -141,7 +176,7 @@ p {
 }
 
 .calendar-day p {
-  position: absolute ;
+  position: absolute;
   top: 3px;
   left: 3px;
   border-radius: 50%;
@@ -176,13 +211,28 @@ svg {
   vertical-align: middle;
 }
 
-
-
-
-
 @media (max-width: 700px) {
   :root {
     font-size: x-small;
+  }
+
+  .offering-img {
+    order: -1;
+    width: 50%;
+    justify-self: center !important;
+  }
+
+  .offering-item {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 0px;
+  }
+  .offering-item:nth-child(even) {
+    grid-template-columns: 1fr !important;
+  }
+
+  .offering-divider {
+    grid-column: span 1;
   }
 
   #calendar {

@@ -1,12 +1,18 @@
 <div id="offerings-header">
-    <h2>Our Offerings</h2>
+  <h2>Our Offerings</h2>
 </div>
 <div id="offerings-body">
-    {% for item in helperFunctions.sortDays(offerings) %}
-        <div>
-            <p>{{ item.title }}</p>
-            <p>{{ item.description }}</p>
-        </div>
-        <img src={{item.image}} />
-    {% endfor %}
+  {% for item in helperFunctions.sortDays(offerings) %}
+  <div class="offering-item">
+    <div class="offering-divider">
+      <hr style="border-color: #00000066; margin: 0; position: relative; bottom: 1px;" />
+      <br />
+    </div>
+    <div>
+      <h3 style="text-align: center; margin-top: 0px">{{ item.title }}</h3>
+      <p>{{ item.description | safe }}</p>
+    </div>
+    <img class="offering-img" src="{{item.image}}" />
+  </div>
+  {% endfor %}
 </div>
