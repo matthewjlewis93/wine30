@@ -72,7 +72,9 @@ p {
 }
 
 .offering-img {
+  border-radius: 4px;
   order: 2;
+  object-fit: cover;
   width: 100%;
   max-width: 500px;
   justify-self: right;
@@ -122,6 +124,10 @@ p {
   outline: 3px solid;
   border-radius: 5px;
   font-size: 1.5rem;
+}
+.offering-button:hover {
+  background-color: #caa8fa;
+  color: #111;
 }
 
 .current-day {
