@@ -109,6 +109,21 @@ p {
   grid-column: span 2;
   order: -3;
 }
+
+.offering-button {
+  order: 5;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  margin-top: 1rem;
+  color: #caa8fa;
+  background-color: #111;
+  text-decoration: none;  
+  outline: 3px solid;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
 .current-day {
   background-color: hsla(260, 100%, 70%, 0.667);
 }

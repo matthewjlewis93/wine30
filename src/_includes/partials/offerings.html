@@ -5,14 +5,29 @@
   {% for item in helperFunctions.sortDays(offerings) %}
   <div class="offering-item">
     <div class="offering-divider">
-      <hr style="border-color: #00000066; margin: 0; position: relative; bottom: 1px;" />
+      <hr
+        style="
+          border-color: #00000066;
+          margin: 0;
+          position: relative;
+          bottom: 1px;
+        "
+      />
       <br />
     </div>
-    <div>
-      <h3 style="text-align: center; margin-top: 0px">{{ item.title }}</h3>
-      <p>{{ item.description | safe }}</p>
+    {% if item.image %}
+    <img class="offering-img" src="{{ item.image }}" />
+    <div style="display: flex; align-items: center; flex-direction: column">
+      {% else %}
+      <div style="grid-column: span 2; text-align: center">
+    {% endif %}
+        <h3 style="text-align: center; margin-top: 0px">{{ item.title }}</h3>
+        <p>{{ item.description | safe }}</p>
+        {% if item.buttonText and item.buttonLink %}
+        <a class="offering-button" href="/{{ item.buttonLink }}">{{item.buttonText}}</a>
+        {% endif %}
+      </div>
     </div>
-    <img class="offering-img" src="{{item.image}}" />
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
