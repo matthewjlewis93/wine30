@@ -1,0 +1,50 @@
+backend: 
+  name: github
+  repo: matthewjlewis93/wine30
+  api_root: https://api.github.com
+  base_url: https://api.netlify.com/
+  auth_endpoint: auth
+media_folder: src/images
+public_folder: /images
+collections:
+  - name: events
+    label: Events
+    folder: "src/_data/events"
+    create: true
+    extension: json
+    # identifier_field: "date"
+    slug: "{{year}}-{{month}}-{{day}}_{{hour}}-{{minute}}-{{second}}-{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+
+  - name: storehours
+    label: Hours
+    folder: "src/_data/hours"
+    create: false
+    extension: "json"
+    sortable_fields: ["order"]
+    delete: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Open", name: "open", widget: "boolean" }
+      - { label: "Open Time", name: "openTime", widget: "string" }
+      - { label: "Close Time", name: "closeTime", widget: "string" }
+      - { label: "Order", name: "order", widget: "hidden"}
+
+  - name: offerings
+    label: Offerings
+    folder: "src/_data/offerings"
+    create: true
+    extension: "json"
+    sortable_fields: ["order"]
+    delete: true
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Display Order", name: "order", widget: "number" }
+      - { label: "Link Text", name: "buttonText", required: false, widget: "string" }
+      - { laell: "Link Page", name: "buttonLink", required: false, widget: "string" }
+      - { label: "Image", name: "image", required: false, widget: "image" }

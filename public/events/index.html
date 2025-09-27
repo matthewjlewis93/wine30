@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Overlock&family=Playfair:ital,opsz,wght@1,5..1200,618&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/index.css" />
+
+    <title>Wine30 Events</title>
+  </head>
+  <body>
+    <main>
+    
+<section id="calendar">
+    <div id="calendar-head">
+        <h2 style="grid-column: span 7;">Event Calendar</h2>
+        <span></span><button onclick="changeMonth(-1)"><svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#111"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg></button><h4 style="grid-column: span 3; text-align: center;" id="month-name"></h4><button onclick="changeMonth(1)"><svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#111"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></button><span></span>
+
+        <h5 class="day-name">Sun</h5>
+        <h5 class="day-name">Mon</h5>
+        <h5 class="day-name">Tues</h5>
+        <h5 class="day-name">Wed</h5>
+        <h5 class="day-name">Thurs</h5>
+        <h5 class="day-name">Fri</h5>
+        <h5 class="day-name">Sat</h5>
+
+    </div>
+    <div id="calendar-body">
+        
+        
+            <p hidden date=2025-8-29 >Party!</p>
+            <p hidden >Party celebrating the launch of the new website!</p>
+        </section>
+    
+        
+            <p hidden date=2025-8-5 >Meeting with Matt on website</p>
+            <p hidden >Discuss new website creating with web development intern</p>
+        </section>
+    
+        
+            <p hidden date=2025-9-12 >Private Event</p>
+            <p hidden >Sorry, you aren&#39;t invited to this one.</p>
+        </section>
+    
+        
+            <p hidden date=2025-11-30 >Future Event</p>
+            <p hidden >A birthday party for web developer matt</p>
+        </section>
+    
+    </div>
+
+    <script src="/events.js" ></script>
+    </main>
+  </body>
+</html>
