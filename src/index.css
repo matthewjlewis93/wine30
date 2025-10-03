@@ -17,7 +17,7 @@ h2 {
 }
 h3 {
   font-family: EB Garamond, serif;
-  font-size: 3.5rem;
+  font-size: 4.2rem;
   line-height: 3.2rem;
   letter-spacing: 0.6rem;
   font-weight: 100;
@@ -31,7 +31,7 @@ p {
 }
 
 #title {
-  background: url("./images/bar-7-16.jpg");
+  background: url("./images/bar-7-16.webp");
   background-size: cover;
   background-position-y: 50%;
   display: flex;
@@ -39,9 +39,9 @@ p {
   align-items: center;
 }
 #title > img {
-  width: 100%;
+  width: 90%;
   max-width: 1500px;
-  margin: 1.8rem 0px;
+  margin: 2rem 0px;
 }
 
 #home-about {
@@ -50,13 +50,17 @@ p {
   background-color: #e2cefdbf;
 }
 #home-about div {
-  background: url("./images/470582978_922590870059867_6361044026133873144_n.jpg");
+  background-image: linear-gradient(#e2cefdbf, #e2cefdbf), url("./images/470582978_922590870059867_6361044026133873144_n.jpg");
   background-size: cover;
+  background-position: center 20%;
 }
 #home-about p {
   padding: 20px 10px;
-  background-color: #e2cefdbf;
   backdrop-filter: blur(1px) ;
+  font-size: 2rem;
+  justify-self: center;
+  max-width: 1200px;
+  
 }
 
 
@@ -115,9 +119,8 @@ p {
 }
 .offering-item p {
   order: 1;
-  font-size: 1.5rem;
-  padding: 0px;
-  /* padding: 0px 0px 20px 0px; */
+  font-size: 2rem;
+  padding: 0px 1rem;
 }
 .offering-item:nth-child(even) img {
   order: -1;

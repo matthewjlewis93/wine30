@@ -14,6 +14,7 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <main>{% block content %}{% endblock %}</main>
+    <main>{{ content | safe }}</main>
+    <script src={{scriptTitle}}></script>
   </body>
 </html>

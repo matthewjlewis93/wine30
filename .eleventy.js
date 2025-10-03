@@ -1,10 +1,9 @@
 module.exports = (config) => {
   config.addPassthroughCopy("./src/index.css/");
   config.addPassthroughCopy("./src/images/");
-
-  config.addCollection("storehours", collection => {
-    return collection.getFilteredByGlob("./src/hours/*.md").sort((a,b) => a.data.order > b.data.order ? 1 : -1 )
-  })
+  config.addPassthroughCopy("./src/home.js/")
+  config.addPassthroughCopy("./src/events.js/")
+  config.addPassthroughCopy("./src/admin/config.yml");
 
   return {
     markdownTemplateEngine: "njk",
