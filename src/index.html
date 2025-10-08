@@ -1,10 +1,23 @@
 ---
-pageTitle: Wine 30
+pageTitle: Wine 30 Home
 scriptTitle: "home.js"
 layout: "layouts/base.html"
 ---
-    
-<div id="title" ><img src="./images/WINE30_FINAL-02.webp" /></div>
+
+<div id="title">
+  <img src="./images/WINE30_FINAL-02.webp" />
+  <div id="navigation-div">
+    <span>
+        <a href="#home-about">About</a>
+        <a href="#offerings-header">Offerings</a>
+        <a href="#hours-container">Hours</a>
+    </span>
+    <span>
+        <a>Location</a>
+        <a href="/events" >Events</a>
+    </span>
+  </div>
+</div>
 <br />
 {% include 'partials/about.html' %}
 <br />
