@@ -407,6 +407,8 @@ svg {
     padding-top: 0px;
     justify-content: start;
     align-items: unset;
+    position: relative;
+    top: -2rem;
   }
   #map-section {
     width: 98%;
