@@ -46,7 +46,7 @@ createCalendar = (dateObject) => {
     }
 
     if (i <= 0) {
-      calendarArray.push("<div class='calendar-day' ></div");
+      calendarArray.push("<div class='non-month-day' ></div");
     } else {
       calendarArray.push(
         `<div class='calendar-day'><p date=${dateString} class=${
@@ -63,8 +63,8 @@ createCalendar = (dateObject) => {
       );
     }
   }
-  while (calendarArray.length % 7 != 0) {
-    calendarArray.push("<div class='calendar-day' ></div>");
+  while (calendarArray.length != 42) {
+    calendarArray.push("<div class='non-month-day' ></div>");
   }
   calendarArray.forEach(
     (e) => (document.getElementById("calendar-body").innerHTML += e)

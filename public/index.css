@@ -332,10 +332,16 @@ a svg {
   background-color: hsl(265, 89%, 92%);
   border-top: 0px;
   border-bottom: 2px solid white;
-  border-inline: 1px solid white;
-  
+  border-inline: 1px solid white;  
   position: relative;
-  /* height: 100px; */
+  aspect-ratio: 1;
+}
+.non-month-day {
+  background-color: hsl(265, 89%, 96%);
+  border-top: 0px;
+  border-bottom: 2px solid white;
+  border-inline: 1px solid white;  
+  position: relative;
   aspect-ratio: 1;
 }
 
