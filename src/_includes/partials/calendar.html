@@ -16,8 +16,11 @@
     <div id="calendar-body">
         {% for file, event in events %}
         {% set event = helperFunctions.dateProcessor(event) %}
-            <p hidden date={{event.year}}-{{event.month}}-{{event.day}} >{{ event.title }}</p>
-            <p hidden >{{ event.description }}</p>
+            <div hidden date={{event.year}}-{{event.month}}-{{(event.day | string).padStart(3,"0")}}>
+                <p>{{ event.title }}</p>
+                <p >{{ event.description }}</p>
+                <p>{{ event.date }}</p>
+            </div>
         </section>
     {% endfor %}
     </div>
