@@ -11,14 +11,14 @@ module.exports = {
     return dayArr;
   },
   dateProcessor(objWithDate) {
-    // let date = new Date(objWithDate.date)
+    let date = new Date(objWithDate.date)
     // date = new Date(`${date.getFullYear()}-${
     //   date.getMonth() + 1
     // }-${String(date.getDate()).padStart(3, "0")}`);
 
     let processedObj = {
       ...objWithDate,
-      month: objWithDate.date.slice(5, 7),
+      month: String(Number(objWithDate.date.slice(5, 7))),
       day: objWithDate.date.slice(8, 10),
       year: objWithDate.date.slice(0, 4),
     };
