@@ -13,14 +13,16 @@
         <h5 class="day-name">Sat</h5>
 
     </div>
-    <div id="calendar-body">
+    <div id="calendar-body"></div>
+    <div>
         {% for file, event in events %}
         {% set event = helperFunctions.dateProcessor(event) %}
-            <div hidden date={{event.year}}-{{event.month}}-{{(event.day | string).padStart(3,"0")}}>
+            <div hidden date={{event.year}}-{{event.month}}-{{(event.day | string).padStart(3,"0")}} >
                 <p>{{ event.title }}</p>
-                <p >{{ event.description }}</p>
+                <p>{{ event.description }}</p>
                 <p>{{ event.date }}</p>
             </div>
-        </section>
-    {% endfor %}
+        {% endfor %}
     </div>
+
+</section>
