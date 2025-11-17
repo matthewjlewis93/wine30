@@ -11,10 +11,6 @@ module.exports = {
     return dayArr;
   },
   dateProcessor(objWithDate) {
-    let date = new Date(objWithDate.date)
-    // date = new Date(`${date.getFullYear()}-${
-    //   date.getMonth() + 1
-    // }-${String(date.getDate()).padStart(3, "0")}`);
 
     let processedObj = {
       ...objWithDate,
@@ -22,8 +18,6 @@ module.exports = {
       day: objWithDate.date.slice(8, 10),
       year: objWithDate.date.slice(0, 4),
     };
-
-    // processedObj = {...objWithDate, month: date.getMonth() +1, day: date.getDate(), year: date.getFullYear() }
 
     return processedObj;
   },

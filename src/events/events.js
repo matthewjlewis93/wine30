@@ -27,7 +27,34 @@ createDateObj = (offset) => {
   return dateObj;
 };
 
+displayEvent = (x) => {
+  const eventWindow = document.getElementById("event-popup");
+  const elementDate =
+    x.parentElement.parentElement.children[0].getAttribute("date");
+
+  const hiddenElement = document.querySelector(`div[date='${elementDate}']`);
+
+  const hiddenElementDate = new Date(hiddenElement.children[4].innerText);
+  const dateString = `${
+    monthArray[hiddenElementDate.getMonth()]
+  } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {
+    hour12: "true",
+    hour: "numeric",
+    minute: "2-digit",
+  })}`;
+
+  hiddenElement.children[4].innerText = dateString;
+  eventWindow.innerHTML = hiddenElement.innerHTML;
+  eventWindow.style.visibility = "visible";
+};
+hideEvent = () => {
+  document.getElementById("event-popup").style.visibility = "hidden";
+};
+
 createCalendar = (dateObject) => {
+  Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
+    (e) => e.removeEventListener("click", (x) => displayEvent(e))
+  );
   document.getElementById("calendar-body").innerHTML = "";
   const calendarArray = [];
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
@@ -36,13 +63,14 @@ createCalendar = (dateObject) => {
     }-${String(i).padStart(3, "0")}`;
     const dateMatch = document.querySelector(`[date='${dateString}']`);
     let formattedDate;
+    let formattedTime;
     if (dateMatch) {
-      formattedDate = new Date(dateMatch.children[2].innerText);
+      formattedDate = new Date(dateMatch.children[4].innerText);
       formattedTime = formattedDate.toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
-        hour12: "true"
-      })
+        hour12: "true",
+      });
     }
 
     if (i <= 0) {
@@ -57,7 +85,7 @@ createCalendar = (dateObject) => {
             : ""
         }>${i}</p>${
           dateMatch
-            ? `<p class='calendar-event-preview' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${formattedTime}</span></p>`
+            ? `<p class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${formattedTime} </span></p>`
             : ""
         }</div>`
       );
@@ -72,6 +100,11 @@ createCalendar = (dateObject) => {
   document.getElementById("month-name").innerText = `${
     monthArray[dateObject["Current Month"].getMonth()]
   } ${dateObject["Current Month"].getFullYear()}`;
+
+  Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
+    (e) => e.addEventListener("click", (x) => displayEvent(e))
+  );
+
   return calendarArray;
 };
 

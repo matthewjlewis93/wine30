@@ -387,6 +387,20 @@ a svg {
   height: 100%;
 }
 
+#event-popup {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: hsl(265, 89%, 96%);
+  border-radius: 5px;
+  border: 2px solid hsl(265, 89%, 60%);
+  inset: 10vh 10vw;
+  opacity: 96%;
+  z-index: 3;
+  background: linear-gradient(#999, #555);
+}
+
 svg {
   vertical-align: middle;
 }
