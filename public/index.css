@@ -396,7 +396,7 @@ a svg {
   border-radius: 5px;
   border: 2px solid hsl(265, 89%, 60%);
   inset: 10vh 10vw;
-  opacity: 96%;
+  opacity: 98%;
   z-index: 3;
   background: linear-gradient(#999, #555);
 }

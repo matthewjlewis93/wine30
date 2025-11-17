@@ -43,8 +43,9 @@ displayEvent = (x) => {
     minute: "2-digit",
   })}`;
 
-  hiddenElement.children[4].innerText = dateString;
   eventWindow.innerHTML = hiddenElement.innerHTML;
+  eventWindow.children[4].innerText = dateString;
+
   eventWindow.style.visibility = "visible";
 };
 hideEvent = () => {
@@ -55,7 +56,6 @@ createCalendar = (dateObject) => {
   Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
     (e) => e.removeEventListener("click", (x) => displayEvent(e))
   );
-  document.getElementById("calendar-body").innerHTML = "";
   const calendarArray = [];
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
     let dateString = `${dateObject["Current Month"].getFullYear()}-${
@@ -94,6 +94,7 @@ createCalendar = (dateObject) => {
   while (calendarArray.length != 42) {
     calendarArray.push("<div class='non-month-day' ></div>");
   }
+  document.getElementById("calendar-body").innerHTML = "";
   calendarArray.forEach(
     (e) => (document.getElementById("calendar-body").innerHTML += e)
   );
