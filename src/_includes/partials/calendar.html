@@ -20,12 +20,16 @@
             <div hidden date={{event.year}}-{{event.month}}-{{(event.day | string).padStart(3,"0")}} >
                 <h3>{{ event.title }}</h3>
                 <hr style="width: 98%;" />
-                <p style="flex-grow: 1; overflow-y: auto" >{{ event.description | replace("\n", "<br />") | safe }}</p>
-                <hr style="width: 98%;" />
+                <!-- <p  ></p> -->
+                <!-- <p style="flex-grow: 1; overflow-y: auto" >{{ event.description | replace("\n", "<br />") | safe }}</p> -->
+                <!-- <hr style="width: 98%;" /> -->
                 <h3 style="text-align: right; font-size: 3rem;" >{{ event.date }}</h3>
                 <button onclick="hideEvent()" style="position: absolute; top: 5px; right: 5px; font-size: 1.2rem;" >X</button>
             </div>
         {% endfor %}
+    </div>
+    <div id="event-list" >
+        <h2>Upcoming Events</h2>
     </div>
 
     <div id="event-popup" ></div>

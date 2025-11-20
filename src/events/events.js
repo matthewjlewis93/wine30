@@ -34,7 +34,7 @@ displayEvent = (x) => {
 
   const hiddenElement = document.querySelector(`div[date='${elementDate}']`);
 
-  const hiddenElementDate = new Date(hiddenElement.children[4].innerText);
+  const hiddenElementDate = new Date(hiddenElement.children[2].innerText);
   const dateString = `${
     monthArray[hiddenElementDate.getMonth()]
   } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {
@@ -44,7 +44,10 @@ displayEvent = (x) => {
   })}`;
 
   eventWindow.innerHTML = hiddenElement.innerHTML;
-  eventWindow.children[4].innerText = dateString;
+
+  
+
+  eventWindow.children[2].innerText = dateString;
 
   eventWindow.style.visibility = "visible";
 };
@@ -65,7 +68,7 @@ createCalendar = (dateObject) => {
     let formattedDate;
     let formattedTime;
     if (dateMatch) {
-      formattedDate = new Date(dateMatch.children[4].innerText);
+      formattedDate = new Date(dateMatch.children[2].innerText);
       formattedTime = formattedDate.toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
