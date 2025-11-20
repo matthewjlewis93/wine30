@@ -2,5 +2,7 @@
   "title": "Future Event",
   "date": "2025-11-30T19:00:00.000-06:00",
   "image": "https://picsum.photos/200",
-  "description": "A birthday party for web developer Matt!"
+  "description": "A birthday party for web developer Matt!",
+  "start": "17:00",
+  "end": "19:00"
 }
