@@ -21,4 +21,16 @@ module.exports = {
 
     return processedObj;
   },
+
+  toTimeString (time) {
+    let times = String(time).split(":");
+    let timeString = '';
+    if (Number(times[0]) > 12) {
+      timeString += (Number(times[0]) - 12) + ":" + times[1] + " PM";
+    } else {
+      timeString += times[0] + ":" + times[1] + " PM";
+    }
+    return timeString;
+  }
+
 };

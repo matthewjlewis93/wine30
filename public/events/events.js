@@ -28,11 +28,17 @@ createDateObj = (offset) => {
 };
 
 displayEvent = (x) => {
+  console.log(x);
   const eventWindow = document.getElementById("event-popup");
-  const elementDate =
-    x.parentElement.parentElement.children[0].getAttribute("date");
+  const elementDate = x.parentElement.parentElement.children[0].getAttribute("date");
+  const elementTime = x.innerText.includes(" ") ? x.innerText : x.nextSibling.innerText;
+  // console.log(elementTime);
+  const calendarObj = {};
+  // Array.from
 
-  const hiddenElement = document.querySelector(`div[date='${elementDate}']`);
+  const hiddenElement = Array.from(document.querySelectorAll(`div[date='${elementDate}']`)).filter(e => e.querySelector("[calendar-role='start']").innerText == elementTime.trim())[0];
+
+  console.log(hiddenElement);
 
   const hiddenElementDate = new Date(hiddenElement.children[2].innerText);
   const dateString = `${
@@ -47,7 +53,7 @@ displayEvent = (x) => {
 
   
 
-  eventWindow.children[2].innerText = dateString;
+  // eventWindow.children[2].innerText = dateString;
 
   eventWindow.style.visibility = "visible";
 };
@@ -60,20 +66,21 @@ createCalendar = (dateObject) => {
     (e) => e.removeEventListener("click", (x) => displayEvent(e))
   );
   const calendarArray = [];
+
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
     let dateString = `${dateObject["Current Month"].getFullYear()}-${
       dateObject["Current Month"].getMonth() + 1
     }-${String(i).padStart(3, "0")}`;
-    const dateMatch = document.querySelector(`[date='${dateString}']`);
+    const dateMatch = Array.from(document.querySelectorAll(`[date='${dateString}']`));
     let formattedDate;
     let formattedTime;
-    if (dateMatch) {
-      formattedDate = new Date(dateMatch.children[2].innerText);
-      formattedTime = formattedDate.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: "true",
-      });
+    if (dateMatch.length) {
+      formattedDate = new Date(dateMatch[0].children[2].innerText);
+      formattedTime = dateMatch.map(date => date.querySelector("[calendar-role='start']").innerText ).sort();
+
+      // formattedTime = document.querySelectorAll(`[date='${dateString}'] span[calendar-role='start']`) ? document.querySelector(`[date='${dateString}'] span[calendar-role='start']`).innerText : "Closed";
+      console.log(dateMatch);
+      console.log(formattedTime);
     }
 
     if (i <= 0) {
@@ -87,9 +94,9 @@ createCalendar = (dateObject) => {
               : ""
             : ""
         }>${i}</p>${
-          dateMatch
-            ? `<p class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${formattedTime} </span></p>`
-            : ""
+          dateMatch.map((date, index) =>
+             `<p class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${formattedTime[index]} </span></p>`).join('')
+            
         }</div>`
       );
     }

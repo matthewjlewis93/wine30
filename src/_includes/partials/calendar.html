@@ -17,13 +17,15 @@
     <div>
         {% for file, event in events %}
         {% set event = helperFunctions.dateProcessor(event) %}
-            <div hidden date={{event.year}}-{{event.month}}-{{(event.day | string).padStart(3,"0")}} >
-                <h3>{{ event.title }}</h3>
+            <div hidden date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3,"0")}} >
+                <h3 calendar-role="title" >{{ event.title }}</h3>
                 <hr style="width: 98%;" />
-                <!-- <p  ></p> -->
-                <!-- <p style="flex-grow: 1; overflow-y: auto" >{{ event.description | replace("\n", "<br />") | safe }}</p> -->
-                <!-- <hr style="width: 98%;" /> -->
-                <h3 style="text-align: right; font-size: 3rem;" >{{ event.date }}</h3>
+                {% if event.eventtype == "event" %}
+                    <p><span calendar-role="start">{{ helperFunctions.toTimeString(event.start) }}</span> - <span calendar-role="end" >{{ helperFunctions.toTimeString(event.end) }}</span></p>
+                {% else %}
+                    <p calendar-role="start" >Closed</p>
+                {% endif %}
+                <h3 calendar-role="date" style="text-align: right; font-size: 3rem;" >{{ event.date }}</h3>
                 <button onclick="hideEvent()" style="position: absolute; top: 5px; right: 5px; font-size: 1.2rem;" >X</button>
             </div>
         {% endfor %}
