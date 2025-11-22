@@ -411,8 +411,11 @@ a svg {
   z-index: 3;
   background: linear-gradient(#999, #555);
 }
-#event-popup>p {
-  display: inline;
+#event-popup p {
+  font-size: 3rem;
+}
+#event-popup h3 {
+  letter-spacing: unset;
 }
 
 svg {

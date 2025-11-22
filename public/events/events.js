@@ -28,33 +28,32 @@ createDateObj = (offset) => {
 };
 
 displayEvent = (x) => {
-  console.log(x);
   const eventWindow = document.getElementById("event-popup");
-  const elementDate = x.parentElement.parentElement.children[0].getAttribute("date");
-  const elementTime = x.innerText.includes(" ") ? x.innerText : x.nextSibling.innerText;
-  // console.log(elementTime);
-  const calendarObj = {};
-  // Array.from
+  const elementDate =
+    x.parentElement.parentElement.children[0].getAttribute("date");
+  const elementTime = x.innerText.includes(" ")
+    ? x.innerText
+    : x.nextSibling.innerText;
 
-  const hiddenElement = Array.from(document.querySelectorAll(`div[date='${elementDate}']`)).filter(e => e.querySelector("[calendar-role='start']").innerText == elementTime.trim())[0];
+  const hiddenElement = Array.from(
+    document.querySelectorAll(`div[date='${elementDate}']`)
+  ).filter(
+    (e) =>
+      e.querySelector("[calendar-role='start']").innerText == elementTime.trim()
+  )[0];
 
-  console.log(hiddenElement);
-
-  const hiddenElementDate = new Date(hiddenElement.children[2].innerText);
-  const dateString = `${
-    monthArray[hiddenElementDate.getMonth()]
-  } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {
-    hour12: "true",
-    hour: "numeric",
-    minute: "2-digit",
-  })}`;
+  const hiddenElementDate = hiddenElement.children[5].innerText;
+  console.log(hiddenElementDate);
+  // const dateString = `${
+  //   monthArray[hiddenElementDate.getMonth()]
+  // } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {
+  //   hour12: "true",
+  //   hour: "numeric",
+  //   minute: "2-digit",
+  // })}`;
 
   eventWindow.innerHTML = hiddenElement.innerHTML;
-
-  
-
-  // eventWindow.children[2].innerText = dateString;
-
+  eventWindow.children[5].innerText = `${monthArray[hiddenElementDate.split('-')[1]-1]} ${hiddenElementDate.split('-')[2]}, ${hiddenElementDate.split('-')[0]}`
   eventWindow.style.visibility = "visible";
 };
 hideEvent = () => {
@@ -63,7 +62,7 @@ hideEvent = () => {
 
 createCalendar = (dateObject) => {
   Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
-    (e) => e.removeEventListener("click", (x) => displayEvent(e))
+    (e) => e.removeEventListener("click", () => displayEvent(e))
   );
   const calendarArray = [];
 
@@ -77,10 +76,6 @@ createCalendar = (dateObject) => {
     if (dateMatch.length) {
       formattedDate = new Date(dateMatch[0].children[2].innerText);
       formattedTime = dateMatch.map(date => date.querySelector("[calendar-role='start']").innerText ).sort();
-
-      // formattedTime = document.querySelectorAll(`[date='${dateString}'] span[calendar-role='start']`) ? document.querySelector(`[date='${dateString}'] span[calendar-role='start']`).innerText : "Closed";
-      console.log(dateMatch);
-      console.log(formattedTime);
     }
 
     if (i <= 0) {
