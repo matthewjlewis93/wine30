@@ -43,7 +43,6 @@ displayEvent = (x) => {
   )[0];
 
   const hiddenElementDate = hiddenElement.children[5].innerText;
-  console.log(hiddenElementDate);
   // const dateString = `${
   //   monthArray[hiddenElementDate.getMonth()]
   // } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {

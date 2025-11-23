@@ -21,7 +21,7 @@ collections:
       - { label: "EventType", name: "eventtype", widget: "hidden", default: "event" }
 
   - name: closures
-    label: Store Closures
+    label: Holidays and Altered Hours
     folder: "src/_data/events"
     create: true
     extension: json
@@ -29,6 +29,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: true }
+      - { label: "Closed All Day?", name: "closed", widget: "boolean", default: false }
+      - { label: "Open", name: "start", widget: "datetime", time_format: true, required: false}
+      - { label: "Close", name: "end", widget: "datetime", time_format: true, required: false}
       - { label: "EventType", name: "eventtype", widget: "hidden", default: "closure" }
 
   - name: storehours

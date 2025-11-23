@@ -23,8 +23,10 @@
                 <br />
                 {% if event.eventtype == "event" %}
                     <p><span calendar-role="start">{{ helperFunctions.toTimeString(event.start) }}</span> - <span calendar-role="end" >{{ helperFunctions.toTimeString(event.end) }}</span></p>
+                {% elseif event.closed %}
+                    <p calendar-role="start" >Closed </p>
                 {% else %}
-                    <p calendar-role="start" >Closed</p>
+                    <p> <span calendar-role="start" >Open</span> from: <br /> {{ helperFunctions.toTimeString(event.start) }} - {{ helperFunctions.toTimeString(event.end) }}</p>
                 {% endif %}
                 <br />
                 <h3 calendar-role="date" style="text-align: right; font-size: 2.8rem;" >{{ event.date }}</h3>

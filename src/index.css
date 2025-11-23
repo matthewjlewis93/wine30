@@ -100,20 +100,26 @@ header {
   background-color: #e2cefdbf;
 }
 #home-about div {
-  background-image: linear-gradient(
+  background-image: 
+  linear-gradient(#ffffffbf, #ffffffbf),
+  /* linear-gradient( 
       hsla(266, 92%, 94%, 0.749),
       hsla(266, 92%, 94%, 0.749)
-    ),
-    url("./images/470582978_922590870059867_6361044026133873144_n.jpg");
+    ),  */
+    url("./images/IMG_1705.JPEG");
+    /* url("./images/470582978_922590870059867_6361044026133873144_n.jpg"); */
   background-size: cover;
-  background-position: center 20%;
+  background-position: center center;
+  /* background-position: center 20%; */
 }
 #home-about p {
+  /* backdrop-filter: blur(1px); */
+  /* background-color: #ffffffbf; */
   padding: 20px 10px;
-  backdrop-filter: blur(1px);
   font-size: 2rem;
   justify-self: center;
   max-width: 1200px;
+  /* color: white; */
 }
 
 #offerings-header {
@@ -404,18 +410,22 @@ a svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* inset: 10px ; */
+  padding-top: 1.2rem ;
   height: min(80svw, 80svh);
   aspect-ratio: 1;
-  opacity: 98%;
+  /* opacity: 99%; */
   z-index: 3;
-  background: linear-gradient(#999, #555);
+  background: linear-gradient( #888, #777, hsl(265, 30%, 32%));
+  overflow-y: auto;
+    /* background: linear-gradient(#999, #555); */
 }
 #event-popup p {
+  padding-left: 2rem;
   font-size: 3rem;
 }
 #event-popup h3 {
   letter-spacing: unset;
+  padding-right: 1rem;
 }
 
 svg {
