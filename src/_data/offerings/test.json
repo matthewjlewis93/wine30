@@ -3,5 +3,5 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar nisi eget massa condimentum molestie. Vestibulum sollicitudin elit ligula, in viverra purus scelerisque quis. Vestibulum mattis mollis lacus, et ornare massa. Praesent nec pretium nisi. In non blandit ante, eu faucibus augue. Praesent sed bibendum felis, sed sollicitudin est. Etiam bibendum justo et mi rutrum mollis. Nam non pretium tellus. Nam blandit, velit in condimentum ultrices, diam orci convallis neque, ac ornare orci orci a quam. Mauris eget facilisis ligula. Suspendisse at diam nulla.",
   "order": 6,
   "buttonText": "Test Link",
-  "buttonLink": "www.google.com"
+  "buttonLink": "https://github.com/"
 }
