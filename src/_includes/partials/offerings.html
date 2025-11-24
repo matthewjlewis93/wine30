@@ -16,7 +16,7 @@
       <br />
     </div>
     {% if item.image %}
-    <img class="offering-img" src="{{ item.image }}" loading="lazy" />
+    <img class="offering-img" src="{{ item.image }}" alt="{{ item.alttext }}" loading="lazy" />
     <div style="display: flex; align-items: center; flex-direction: column">
       {% else %}
       <div style="grid-column: span 2; text-align: center">
