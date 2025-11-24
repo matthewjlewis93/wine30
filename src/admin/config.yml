@@ -62,3 +62,4 @@ collections:
       - { label: "Link Text", name: "buttonText", required: false, widget: "string" }
       - { laell: "Link Page", name: "buttonLink", required: false, widget: "string" }
       - { label: "Image", name: "image", required: false, widget: "image" }
+      - { label: "Image Alt Text", name: "alttext", required: false, widget: "string" }

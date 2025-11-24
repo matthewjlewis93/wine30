@@ -42,6 +42,7 @@ displayEvent = (x) => {
       e.querySelector("[calendar-role='start']").innerText == elementTime.trim()
   )[0];
 
+
   const hiddenElementDate = hiddenElement.children[5].innerText;
   // const dateString = `${
   //   monthArray[hiddenElementDate.getMonth()]
