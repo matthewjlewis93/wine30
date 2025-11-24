@@ -2,5 +2,6 @@
   "image": "/images/beer_cropped.webp",
   "title": "Craft Beer",
   "description": "At Wine:30, we believe life's finest moments deserve an exceptional drink. While our passion for fine wines runs deep, our love extends beyond the vine. We offer a variety of craft beers to complement our curated wine selection, ensuring there's something perfect for every palate—whether you prefer beer or wine.  Wine:30 has something for both.",
-  "order": 2
+  "order": 2,
+  "alttext": "Three beers being clinked together"
 }
