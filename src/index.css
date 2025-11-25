@@ -391,12 +391,6 @@ a svg {
   font-size: clamp(0.6rem, 2vw, 23px ) !important;
   align-content: center;
   text-align: center;
-  /* position: absolute; */
-  /* top: 0px; */
-  /* left: 0px; */
-  /* inset: 0px; */
-  /* width: 100%; */
-  /* height: 100%; */
 }
 
 #event-popup {
@@ -426,6 +420,22 @@ a svg {
 #event-popup h3 {
   letter-spacing: unset;
   padding-right: 1rem;
+}
+
+#upcoming-events {
+  background-color: #ffffff66;
+  /* max-width: 1000px; */
+  align-self: center;
+  padding: 10px;
+  margin: auto;
+}
+#upcoming-events h2 {
+  font-size: 4rem;
+}
+
+#event-list {
+  height: 60svh;
+  overflow-y: auto;
 }
 
 svg {

@@ -14,10 +14,14 @@
 
     </div>
     <div id="calendar-body"></div>
-    <div>
+    
+    <div id="event-popup" ></div>
+    
+</section>
+    <div id="hidden-dates">
         {% for file, event in events %}
         {% set event = helperFunctions.dateProcessor(event) %}
-            <div hidden date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3,"0")}} >
+            <div hidden calendar-role="{{ event.eventtype }}" date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3,"0")}} >
                 <h3 calendar-role="title" >{{ event.title }}</h3>
                 <hr style="width: 98%;" />
                 <br />
@@ -34,10 +38,24 @@
             </div>
         {% endfor %}
     </div>
-    <div id="event-list" >
-        <h2>Upcoming Events</h2>
+
+<div id="upcoming-events" >
+    <h2>Upcoming Events</h2>
+    <div id="event-list">
+        {% for file, event in events %}
+        {% set event = helperFunctions.dateProcessor(event) %}
+        <div style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
+              <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
+                  <h3 style="letter-spacing: normal; font-size: 3.5rem;">{{event.title}}</h3>
+              </div>
+              <div>
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                      <p style="font-size: 3rem; padding: 0px;">Mon</p>
+                      <h3 style="margin: 0px; letter-spacing: -2px;" >08</h3>
+                  </div>
+                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;" ><span calendar-role="start" >{{ helperFunctions.toTimeString(event.start) }}</span> - <span calendar-role="end" >{{helperFunctions.toTimeString(event.end)}}</span></p>
+              </div>
+          </div><br />
+        {% endfor %}
     </div>
-
-    <div id="event-popup" ></div>
-
-</section>
+</div>
