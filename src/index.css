@@ -94,12 +94,12 @@ header {
   font-size: 1.5rem;
 }
 
-#home-about {
+#about-us {
   position: relative;
   text-align: center;
   background-color: #e2cefdbf;
 }
-#home-about div {
+#about-us div {
   background-image: 
   linear-gradient(#ffffffbf, #ffffffbf),
   /* linear-gradient( 
@@ -112,7 +112,7 @@ header {
   background-position: center center;
   /* background-position: center 20%; */
 }
-#home-about p {
+#about-us p {
   /* backdrop-filter: blur(1px); */
   /* background-color: #ffffffbf; */
   padding: 20px 10px;
@@ -217,7 +217,7 @@ header {
   background-color: hsla(260, 100%, 70%, 0.667);
 }
 
-#hours-container {
+#hours {
   position: relative;
   align-content: center;
   justify-items: center;
