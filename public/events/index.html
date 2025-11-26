@@ -55,28 +55,28 @@
     <!-- <div id="hidden-dates">
         
         
-            <div hidden calendar-role="" date=2025-08-005 >
+            <div hidden calendar-role="event" date=2025-08-005 >
                 <h3 calendar-role="title" >Meeting with Matt on website</h3>
                 <hr style="width: 98%;" />
                 <br />
                 
-                    <p> <span calendar-role="start" >Open</span> from: <br /> 10:00 PM - 11:00 PM</p>
+                    <p><span calendar-role="start">10:00 PM</span> - <span calendar-role="end" >11:00 PM</span></p>
                 
                 <br />
-                <h3 calendar-role="date" style="text-align: right; font-size: 2.8rem;" >2025-08-05T10:00:00.000-05:00</h3>
+                <h3 calendar-role="date" style="text-align: right; font-size: 2.8rem;" >2025-08-05</h3>
                 <button onclick="hideEvent()" style="position: absolute; top: 5px; right: 5px; font-size: 1.2rem;" >X</button>
             </div>
         
         
-            <div hidden calendar-role="" date=2025-09-012 >
+            <div hidden calendar-role="event" date=2025-09-012 >
                 <h3 calendar-role="title" >Private Event</h3>
                 <hr style="width: 98%;" />
                 <br />
                 
-                    <p> <span calendar-role="start" >Open</span> from: <br /> 12:00 PM - 1:00 PM</p>
+                    <p><span calendar-role="start">12:00 PM</span> - <span calendar-role="end" >1:00 PM</span></p>
                 
                 <br />
-                <h3 calendar-role="date" style="text-align: right; font-size: 2.8rem;" >2025-09-12T16:00:00.000-05:00</h3>
+                <h3 calendar-role="date" style="text-align: right; font-size: 2.8rem;" >2025-09-12</h3>
                 <button onclick="hideEvent()" style="position: absolute; top: 5px; right: 5px; font-size: 1.2rem;" >X</button>
             </div>
         
@@ -165,32 +165,40 @@
     <div id="event-list">
         
         
-        <div calendar-role="" date=2025-08-005 style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
+        <div calendar-role="event" date=2025-08-005 style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
               <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Meeting with Matt on website</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Aug</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >05</h3>
                   </div>
 
+                  
+                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;" >
+                    <span calendar-role="start" >10 PM</span><span calendar-role="end" > - 11 PM</span>
+                
                   
                 </p>
               </div>
           </div><br />
           
         
-        <div calendar-role="" date=2025-09-012 style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
+        <div calendar-role="event" date=2025-09-012 style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
               <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Private Event</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Sep</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >12</h3>
                   </div>
 
+                  
+                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;" >
+                    <span calendar-role="start" >12 PM</span><span calendar-role="end" > - 1 PM</span>
+                
                   
                 </p>
               </div>
@@ -202,7 +210,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Thanksgiving Day</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Nov</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >27</h3>
                   </div>
@@ -221,7 +229,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Birthday Party</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Nov</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >30</h3>
                   </div>
@@ -241,7 +249,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Birthday Party After Party</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Nov</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >30</h3>
                   </div>
@@ -261,7 +269,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Wine Club Event</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Dec</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >06</h3>
                   </div>
@@ -281,7 +289,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Live Music! Hit Repeat with John and Angela</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Dec</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >06</h3>
                   </div>
@@ -301,10 +309,13 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">Christmas Eve</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">Dec</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >24</h3>
                   </div>
+
+                  
+                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> 1 PM - 5 PM</span></p>
 
                   
                 </p>

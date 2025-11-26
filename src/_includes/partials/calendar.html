@@ -59,7 +59,7 @@
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 3.5rem;">{{event.title}}</h3>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
                       <p style="font-size: 3rem; padding: 0px;">{{ ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][event.month - 1]}}</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >{{ event.day }}</h3>
                   </div>
@@ -70,6 +70,9 @@
                 
                   {% elseif event.closed %}
                   <p calendar-role="start" style="padding: 0px; font-size: 1.2rem; justify-self: center;">Closed<span calendar-role="end"></span></p>
+
+                  {% else %}
+                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> {{ helperFunctions.toTimeString(event.start) | replace(":00", "") }} - {{ helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span></p>
 
                   {% endif %}
                 </p>

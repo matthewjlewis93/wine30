@@ -75,7 +75,7 @@ createCalendar = (dateObject) => {
 
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
     let dateString = `${dateObject["Current Month"].getFullYear()}-${
-      dateObject["Current Month"].getMonth() + 1
+      String(dateObject["Current Month"].getMonth() + 1).padStart(2, "0")
     }-${String(i).padStart(3, "0")}`;
     const dateMatch = Array.from(
       document.querySelectorAll(`[date='${dateString}']`)
@@ -83,10 +83,6 @@ createCalendar = (dateObject) => {
     // let formattedDate;
     let formattedTime;
     if (dateMatch.length) {
-      // console.dir(dateMatch[0].getAttribute("date"));
-      // console.log(dateMatch[0].children[2].innerText);
-      // formattedDate = new Date(dateMatch[0].children[2].innerText);
-      // console.log(formattedDate);
       formattedTime = dateMatch
         .map((date) => timeFormatter(date.querySelector("[calendar-role='start']").innerText))
         .sort();
@@ -138,19 +134,13 @@ let monthOffset = 0;
 
 createCalendar(createDateObj(monthOffset));
 
-// document.getElementById(
-//   "event-list"
-// ).innerHTML = Array.from(document.querySelectorAll("[calendar-role='event']")).map(upcoming_event => 
-//   `<div style="display: flex; justify-content: space-between; padding: 10px; margin: 0px auto; background-color: hsla(0, 0%, 100%, 0.6); max-width: 1100px; border-radius: 5px; gap: 2px;" >
-//               <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
-//                   <h3 style="letter-spacing: normal; font-size: 3.5rem;">${upcoming_event.querySelector("[calendar-role='title']").innerText}</h3>
-//               </div>
-//               <div>
-//                   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsla(0, 0%, 0%, 0.2); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; " >
-//                       <p style="font-size: 3rem; padding: 0px;">Dec</p>
-//                       <h3 style="margin: 0px; letter-spacing: -2px;" >08</h3>
-//                   </div>
-//                   <p style="padding: 0px; font-size: 1.2rem; justify-self: center;" >1 PM - 5 PM</p>
-//               </div>
-//           </div><br />`).join('');
+const todaysDate = new Date();
+const todaysDateString = `${todaysDate.getFullYear()}-${String(todaysDate.getMonth()+1).padStart(2, "0")}-${String(todaysDate.getDate()).padStart(3, "0")}`
 
+Array.from(
+  document.querySelectorAll("#event-list>div")
+).forEach(evnt => {
+  if (todaysDateString > evnt.getAttribute("date")) {
+    evnt.style.display = "none";
+  }
+})
