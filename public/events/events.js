@@ -13,6 +13,13 @@ const monthArray = [
   "December",
 ];
 
+timeFormatter = (time) => {
+  if (time.includes(":")) {
+    return time;
+  }
+  return time.replace(" ", ":00 ");
+}
+
 createDateObj = (offset) => {
   const dateObj = {};
   let currentMonth = new Date(
@@ -39,22 +46,21 @@ displayEvent = (x) => {
     document.querySelectorAll(`div[date='${elementDate}']`)
   ).filter(
     (e) =>
-      e.querySelector("[calendar-role='start']").innerText == elementTime.trim()
+      e
+        .querySelector("[calendar-role='start']")
+        .innerText.replace(/(?<!:00)\s/, ":00 ") == elementTime.trim()
   )[0];
 
-  const hiddenElementDate = hiddenElement.children[5].innerText;
-  // const dateString = `${
-  //   monthArray[hiddenElementDate.getMonth()]
-  // } ${hiddenElementDate.getDate()}\n${hiddenElementDate.toLocaleTimeString([], {
-  //   hour12: "true",
-  //   hour: "numeric",
-  //   minute: "2-digit",
-  // })}`;
+  const hiddenElementDate = hiddenElement.getAttribute("date")
 
-  eventWindow.innerHTML = hiddenElement.innerHTML;
+  Array.from(["title", "start", "end"]).forEach(role => {
+    eventWindow.querySelector(`[calendar-role='${role}']`).innerText = hiddenElement.querySelector(`[calendar-role='${role}']`).innerText || '';
+  }
+  )
+  // eventWindow.innerText = hiddenElement.querySelector()
   eventWindow.children[5].innerText = `${
     monthArray[hiddenElementDate.split("-")[1] - 1]
-  } ${hiddenElementDate.split("-")[2]}, ${hiddenElementDate.split("-")[0]}`;
+  } ${hiddenElementDate.split("-")[2].slice(1,3) }, ${hiddenElementDate.split("-")[0]}`;
   eventWindow.style.visibility = "visible";
 };
 hideEvent = () => {
@@ -74,12 +80,15 @@ createCalendar = (dateObject) => {
     const dateMatch = Array.from(
       document.querySelectorAll(`[date='${dateString}']`)
     );
-    let formattedDate;
+    // let formattedDate;
     let formattedTime;
     if (dateMatch.length) {
-      formattedDate = new Date(dateMatch[0].children[2].innerText);
+      // console.dir(dateMatch[0].getAttribute("date"));
+      // console.log(dateMatch[0].children[2].innerText);
+      // formattedDate = new Date(dateMatch[0].children[2].innerText);
+      // console.log(formattedDate);
       formattedTime = dateMatch
-        .map((date) => date.querySelector("[calendar-role='start']").innerText)
+        .map((date) => timeFormatter(date.querySelector("[calendar-role='start']").innerText))
         .sort();
     }
 

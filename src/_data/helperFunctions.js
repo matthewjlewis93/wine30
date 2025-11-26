@@ -31,6 +31,15 @@ module.exports = {
       timeString += times[0] + ":" + times[1] + " PM";
     }
     return timeString;
+  },
+
+  sortEventDates (file) {
+    const sortedKeys = Object.keys(file).sort((a, b) =>
+      `${file[a].date}${file[a].start}`.localeCompare(`${file[b].date}${file[b].start}`)
+    );
+    const sortedDates = {};
+    sortedKeys.forEach( date => sortedDates[date] = file[date] )
+    return sortedDates;
   }
 
 };
