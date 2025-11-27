@@ -34,7 +34,7 @@ module.exports = {
   },
 
   sortEventDates (file) {
-    const sortedKeys = Object.keys(file).sort((a, b) =>
+    const sortedKeys = Object.keys(file).filter(eventOrHoliday => file[eventOrHoliday].date.slice(0,4) >= new Date().getFullYear()- 1 ).sort((a, b) =>
       `${file[a].date}${file[a].start}`.localeCompare(`${file[b].date}${file[b].start}`)
     );
     const sortedDates = {};

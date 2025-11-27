@@ -424,18 +424,32 @@ a svg {
 
 #upcoming-events {
   background-color: #ffffff66;
-  /* max-width: 1000px; */
+  max-width: 1200px;
   align-self: center;
-  padding: 10px;
+  border: 2px solid #000000c0;
+  border-radius: 4px;
+  /* padding: 10px; */
   margin: auto;
 }
 #upcoming-events h2 {
   font-size: 4rem;
+  padding-left: 5px;
 }
 
 #event-list {
+  padding: 10px;
   height: 60svh;
   overflow-y: auto;
+}
+#event-list>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0px auto 1rem auto;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  max-width: 1100px;
+  border-radius: 5px;
+  gap: 2px;
 }
 
 svg {
