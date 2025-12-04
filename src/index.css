@@ -79,13 +79,12 @@ header {
   display: flex;
   width: 100%;
   padding: 0px 1rem;
-  column-gap: 2rem;
+  column-gap: 1rem;
   row-gap: 2rem;
   flex-wrap: wrap;
 }
 #navigation-div span {
-  flex-grow: 1;
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
 }
 #navigation-div a {
