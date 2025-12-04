@@ -457,6 +457,14 @@ a svg {
   border-radius: 5px;
   gap: 2px;
 }
+input {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+select {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
 
 svg {
   vertical-align: middle;
