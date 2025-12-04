@@ -129,8 +129,9 @@
 
 <h3 style="font-size: 3rem">Wine Club Sign Up</h3>
 <hr />
-<form id="wine-club-signup"
-name="Wine Club Signup"
+<form
+  id="wine-club-signup"
+  name="Wine Club Signup"
   netlify
   style="
     display: flex;
@@ -157,38 +158,104 @@ name="Wine Club Signup"
   <input id="address" name="address" />
   <br />
   <label for="phone">Phone*</label>
-  <input id="phone" name="phone" required />
+  <input id="phone" name="phone" type="tel" required />
   <br />
   <label for="email">Email*</label>
   <input id="email" name="email" type="email" required />
   <br />
-  <select form="wine-club-signup" name="dry-sweet" id="dry-sweet" name="dry-sweet" required >
+  <select
+    form="wine-club-signup"
+    name="dry-sweet"
+    id="dry-sweet"
+    name="dry-sweet"
+    required
+  >
     <option disabled selected value="">-- Dry or Sweet --</option>
-    <option value="dry">Dry</option>
-    <option value="sweet">Sweet</option>
-    <option value="both">Both</option>
+    <option value="Dry">Dry</option>
+    <option value="Sweet">Sweet</option>
+    <option value="Both">Both</option>
   </select>
   <br />
-  <select form="wine-club-signup" id="wine-club-level" name="wine club level" required>
+  <select
+    form="wine-club-signup"
+    id="wine-club-level"
+    name="wine club level"
+    required
+  >
     <option selected disabled value="">-- Wine Club Level --</option>
-    <option value="level 1">Level 1 - Sip</option>
-    <option value="level 2">Level 2 - Savor</option>
-    <option value="level 3">Level 3 - Share</option>
-    <option value="level 4">Level 4 - Premium</option>
-</select>
-<br />
-<label for="other-preferences" >Other Wine Preferences</label>
-<textarea id="other-preferences" name="other preferences" style="resize: none; max-height: 150px; field-sizing: content; max-width: 100%;"></textarea>
-<label for="server">Server</label>
-<input name="server" id="server" />
+    <option value="Level 1">Level 1 - Sip</option>
+    <option value="Level 2">Level 2 - Savor</option>
+    <option value="Level 3">Level 3 - Share</option>
+    <option value="Level 4">Level 4 - Premium</option>
+  </select>
+  <br />
+  <label for="other-preferences">Other Wine Preferences</label>
+  <textarea
+    id="other-preferences"
+    name="other preferences"
+    style="
+      resize: none;
+      max-height: 150px;
+      field-sizing: content;
+      max-width: 100%;
+    "
+  ></textarea>
+  <br />
+  <label for="server">Server</label>
+  <input name="server" id="server" />
 
   <br />
-  <button style="width: min-content" >
-    Submit
-  </button>
+  <p style="font-size: 0.8rem; padding: 0px; margin: 0px -20%;">Terms & Conditions:<br />
+
+Membership is FREE with the exception of a $1.00 credit card
+
+verification fee initially charged.
+
+Members must be 21 years of age or older, by signing up you
+
+are affirming you are or over 21. Order pickup and purchases must be made by a
+
+person 21 years or older, ID checked.
+
+A 1-year commitment with quarterly billing to credit card on
+
+file; automatic renewal. Cancellation prior to 1 year will have a $50
+
+cancellation fee. Members must notify Wine:30 on Oak Street in writing to
+
+Annett@w30.wine
+
+15 days prior to pick up date if there are any changes to the order or cancellation.
+
+Notification of pickup party date will be sent via email;
+
+however, no notification is sent prior to billing. Credit card on file will be
+
+automatically charged within 3 business days prior to the announced pickup
+
+date. Once the order is processed the wine is considered purchased and there
+
+will be no refunds. It is the members responsibility to pick up the order
+
+within 2 weeks of the Quarterly Pick up date. If not picked up, it will be
+
+returned to stock without refund.
+
+Members select wines at quarterly tasting events. Wine:30 choose for those who don't attend or respond via email, based on their application preferences.
+
+Wine:30 may substitute a different vintage or wine of equal or greater value if a
+
+specific wine is depleted or unavailable prior to pick up.
+
+Terms and Conditions are subject to change, and by signing up to become a member of the Wine Club, you are agreeing to these terms.</p>
+<br />
+  <label style="display: flex; align-items: center;" >I agree to the terms & conditions <input type="checkbox" id="agree" value=true required /></label>
+  <br />
+  <button style="width: min-content" >Submit</button>
 </form>
 <br />
-<br /></main>
+<br />
+</main>
     <script src=></script>
   </body>
 </html>
