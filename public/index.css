@@ -50,7 +50,9 @@ header {
   background-color: #e8d8fd66;
   
 }
-
+nav>a {
+  font-size: 1.5rem;
+}
 #header-img {
   height: 3rem;
 }
@@ -457,13 +459,36 @@ a svg {
   border-radius: 5px;
   gap: 2px;
 }
-input {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+#club-levels {
+  background: linear-gradient(#22222270, #000000e0);
+  margin: 5px;
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  border: 0.6rem solid #ffffffee;
+  max-width: max-content;
+  justify-self: center;
 }
-select {
+#club-levels h4 {
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 3fr 1fr 3fr;
+  gap: 1.5rem;
+  font-size: 3rem;
+}
+#club-levels p {
+  padding-inline: 1rem;
+  font-size: 1.6rem;
+}
+input, textarea, select {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+label>input[type="checkbox"] {
+  margin: 0px 0.5rem 0px 0px;
+}
+label {
+  font-family: Overlock, Arial, sans-serif;
 }
 
 svg {
