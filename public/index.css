@@ -263,7 +263,7 @@ nav>a {
   border-radius: 8px;
 }
 
-a svg {
+.location-icon {
   position: absolute;
   z-index: 5;
   top: -28px;
@@ -489,6 +489,20 @@ label>input[type="checkbox"] {
 }
 label {
   font-family: Overlock, Arial, sans-serif;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-icon {
+  border-radius: 50%;
+  background-color: #ffffff50;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 svg {
