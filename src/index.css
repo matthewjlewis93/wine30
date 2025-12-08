@@ -48,7 +48,6 @@ a {
 header {
   padding: 5px;
   background-color: #e8d8fd66;
-  
 }
 nav>a {
   font-size: 1.5rem;
@@ -413,13 +412,10 @@ nav>a {
   left: 50%;
   transform: translate(-50%, -50%);
   padding-top: 1.2rem ;
-  height: min(80svw, 80svh);
-  aspect-ratio: 1;
-  /* opacity: 99%; */
+  width: min(80svw, 80svh);
   z-index: 3;
   background: linear-gradient( #888888, #777777, hsla(265, 30%, 32%, 70%));
   overflow-y: auto;
-    /* background: linear-gradient(#999, #555); */
 }
 #event-popup p {
   padding-left: 2rem;
@@ -492,6 +488,7 @@ label {
 }
 
 #footer {
+  border-top: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -500,10 +497,37 @@ label {
 .footer-icon {
   border-radius: 50%;
   background-color: #ffffff50;
+  border: 1px solid white;
   padding: 0.5rem;
   width: 3rem;
   height: 3rem;
 }
+
+#event-title {
+  background-image: url("/images/Wine30-17.jpg");
+  background-size: cover;
+  background-position-y: 5%;
+  padding: 5rem 0px;
+  width: 100%;
+  max-width: 1200px;
+  justify-self: center;
+}
+
+#event-title>h1{
+  font-family: EB Garamond, serif;
+  font-size: 7rem;
+  margin: 0px;
+  justify-self: center;
+  text-shadow: 0px 0px 4px #ffffffdd;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.4rem;
+  width: fit-content;
+  background-color: #ffffff40;
+  backdrop-filter: blur(2px);
+  padding: 1rem;
+}
+
 
 svg {
   vertical-align: middle;

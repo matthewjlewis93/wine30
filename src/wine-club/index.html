@@ -193,7 +193,10 @@ scriptTitle: ""
     >
     <input type="checkbox" id="agree" value="true" required />I agree to the terms & conditions</label>
   <br />
-  <button style="width: min-content">Submit</button>
+  <span style="display: flex; justify-content: space-between; align-items: center;" >
+    <input style="width: min-content" type="submit"/> <input type="reset" />
+  </span>
 </form>
 <br />
 <br />
+{% include 'partials/footer.html' %}

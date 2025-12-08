@@ -63,3 +63,13 @@ collections:
       - { laell: "Link Page", name: "buttonLink", required: false, widget: "string" }
       - { label: "Image", name: "image", required: false, widget: "image" }
       - { label: "Image Alt Text", name: "alttext", required: false, widget: "string" }
+
+  - name: about
+    label: About Us
+    folder: "src/_data/about"
+    create: false
+    extension: "json"
+    sortable_fields: ["order"]
+    delete: true
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
