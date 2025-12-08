@@ -70,5 +70,5 @@ collections:
     create: false
     extension: "json"
     fields: 
-      - { label: "Title", name: "title", widget: "hidden" }
+      - { label: "Title", name: "title", widget: "hidden", default: "About Paragraph" }
       - { label: "Text", name: "text", widget: "text" }
