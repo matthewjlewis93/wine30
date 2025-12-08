@@ -69,7 +69,6 @@ collections:
     folder: "src/_data/about"
     create: false
     extension: "json"
-    sortable_fields: ["order"]
-    delete: true
     fields: 
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "hidden" }
+      - { label: "Text", name: "text", widget: "text" }
