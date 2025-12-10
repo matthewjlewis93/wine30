@@ -433,8 +433,7 @@ nav>a {
   align-self: center;
   border: 2px solid #000000c0;
   border-radius: 4px;
-  /* padding: 10px; */
-  margin: auto;
+  margin: 0.5rem;
 }
 #upcoming-events h2 {
   font-size: 4rem;
