@@ -57,8 +57,7 @@ nav>a {
 }
 
 #title {
-  /* background: url("./images/bar-7-16.webp"); */
-  background: url("./images/Wine30-6.jpg");
+  background: url("./images/Wine30-6.webp");
   background-size: cover;
   height: 100svh;
   background-position: 75% 100%;
@@ -130,7 +129,7 @@ nav>a {
 }
 
 #offerings-header {
-  /* background: url("./images/Wine30-6.jpg"); */
+  /* background: url("./images/Wine30-6.webp"); */
   background: url("./images/wine30-18.jpg");
   background-size: cover;
   background-position-y: 40%;
