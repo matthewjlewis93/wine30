@@ -201,7 +201,7 @@ nav>a {
   order: -3;
 }
 
-.offering-button {
+.link-button {
   order: 5;
   width: 50%;
   text-align: center;
@@ -214,7 +214,7 @@ nav>a {
   border-radius: 5px;
   font-size: 1.5rem;
 }
-.offering-button:hover {
+.link-button:hover {
   background-color: #caa8fa;
   color: #111;
 }
@@ -428,11 +428,12 @@ nav>a {
 
 #upcoming-events {
   background-color: #ffffff66;
-  max-width: 1200px;
-  align-self: center;
+  max-width: min(1200px, 95%);
+  /* align-self: center; */
+  /* justify-self: center; */
   border: 2px solid #000000c0;
   border-radius: 4px;
-  margin: 0.5rem;
+  margin: 0.5rem auto;
 }
 #upcoming-events h2 {
   font-size: 4rem;
@@ -510,6 +511,9 @@ label {
   width: 100%;
   max-width: 1200px;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #event-title>h1{
@@ -527,6 +531,15 @@ label {
   padding: 1rem;
 }
 
+#event-registration-btn {
+  max-width: 300px;
+  background-color: #caa8fa;
+  color: black;
+}
+#event-registration-btn:hover {
+  background-color: black;
+  color: #caa8fa;
+}
 
 svg {
   vertical-align: middle;
