@@ -34,9 +34,10 @@
     <div id="event-list">
         {% for file, event in helperFunctions.sortEventDates(events) %}
         {% set event = helperFunctions.dateProcessor(event) %}
-        <div calendar-role="{{ event.eventtype }}" date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3,"0")}} >
+        <div calendar-role="{{ event.eventtype }}" date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3, "0") }} >
               <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 2.5rem;">{{event.title}}</h3>
+                  <p style="font-size: 1rem; padding-inline: 0.75rem;" calendar-role="description" >{{ event.description }}</p>
               </div>
               <div>
                   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >

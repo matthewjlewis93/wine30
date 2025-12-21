@@ -15,10 +15,13 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}_{{hour}}-{{minute}}-{{second}}-{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Date", name: "date", widget: "datetime", date_format: true }
       - { label: "Start Time", name: "start", widget: "datetime", time_format: true }
       - { label: "End Time", name: "end", widget: "datetime", time_format: true }
+      - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "EventType", name: "eventtype", widget: "hidden", default: "event" }
+      - { label: "Registration Link", name: "registration", widget: "string", required: false}
 
   - name: closures
     label: Holidays and Altered Hours
@@ -68,6 +71,7 @@ collections:
     label: About Us
     folder: "src/_data/about"
     create: false
+    delete: false
     extension: "json"
     fields: 
       - { label: "Title", name: "title", widget: "hidden", default: "About Paragraph" }
