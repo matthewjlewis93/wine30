@@ -38,9 +38,7 @@ displayEvent = (x) => {
   const eventWindow = document.getElementById("event-popup");
   const elementDate =
     x.parentElement.parentElement.children[0].getAttribute("date");
-  const elementTime = x.innerText.includes(" ")
-    ? x.innerText
-    : x.nextSibling.innerText;
+  const elementTime = x.parentElement.getAttribute("time");
 
   const hiddenElement = Array.from(
     document.querySelectorAll(`div[date='${elementDate}']`)
@@ -101,7 +99,7 @@ createCalendar = (dateObject) => {
         }>${i}</p>${dateMatch
           .map(
             (date, index) =>
-              `<p class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${formattedTime[index]} </span></p>`
+              `<p time='${formattedTime[index]}'  class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${ date.querySelector("[calendar-role='subtitle']") ? date.querySelector("[calendar-role='subtitle']").innerText :  formattedTime[index]} </span></p>`
           )
           .join("")}</div>`
       );

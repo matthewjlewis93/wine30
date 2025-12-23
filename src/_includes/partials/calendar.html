@@ -37,10 +37,15 @@
         <div calendar-role="{{ event.eventtype }}" date={{event.year}}-{{(event.month | string).padStart(2, "0") }}-{{(event.day | string).padStart(3, "0") }} >
               <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
                   <h3 calendar-role="title" style="letter-spacing: normal; font-size: 2.5rem;">{{event.title}}</h3>
-                  {% if event.registration %}
-                  <a calendar-role="registration" class="link-button registration-button" >Register Here</a>
+
+                  {% if event.subtitle %}
+                    <p hidden calendar-role="subtitle" >{{event.subtitle}}</p>
                   {% endif %}
-                  <p style="font-size: 1rem; padding-inline: 0.75rem;" calendar-role="description" >{{ event.description | replace("\n", "<br />") | safe   }}</p>
+
+                  {% if event.registration %}
+                  <a calendar-role="registration" class="link-button registration-button" target="_blank" href={{event.registration}} >Register Here</a>
+                  {% endif %}
+                  <p calendar-role="description" >{{ event.description | replace("\n", "<br />") | safe   }}</p>
               </div>
               <div>
                   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >

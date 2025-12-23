@@ -551,6 +551,11 @@ label {
   width: max-content;
 }
 
+p[calendar-role="description"] {
+  font-size: 1rem;
+  padding-inline: 0.75rem;
+}
+
 svg {
   vertical-align: middle;
 }
