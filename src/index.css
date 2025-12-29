@@ -411,26 +411,38 @@ nav>a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding-top: 1.2rem ;
+  padding: 1.2rem 5px 0px 10px;
   width: min(80svw, 80svh);
   z-index: 3;
-  background: linear-gradient( #888888, #777777, hsla(265, 30%, 32%, 70%));
+  background: linear-gradient( #888888, #777777, hsla(265, 30%, 22%, 90%));
+  max-height: 95svh;
   overflow-y: auto;
 }
 #event-popup p {
-  padding-left: 2rem;
-  font-size: 3rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  margin: 0px 0px 1rem 0px;
+}
+[calendar-role="description"] {
+  background-color: #ffffff10;
 }
 #event-popup h3 {
   letter-spacing: unset;
   padding-right: 1rem;
+  margin: 0px;
+}
+
+#calendar-registration {
+  order: 0;
+  scale: 1;
+  font-size: 1.2rem;
+  padding: 4px 1rem;
+  max-width: fit-content;
 }
 
 #upcoming-events {
   background-color: #ffffff66;
   max-width: min(1200px, 95%);
-  /* align-self: center; */
-  /* justify-self: center; */
   border: 2px solid #000000c0;
   border-radius: 4px;
   margin: 0.5rem auto;

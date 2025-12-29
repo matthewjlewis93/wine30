@@ -44,10 +44,15 @@
                 <hr style="width: 98%;">
                 <br>
                 
-                    <p><span calendar-role="start"></span><span calendar-role="end"></span></p>
-                
-                <br>
-                <h3 calendar-role="date" style="text-align: right; font-size: 2rem;"></h3>
+                <p calendar-role="description" style="max-height: 40svh; overflow-y: auto; padding: 5px;"></p>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-inline: 1rem;" >
+                    <a target="_blank" href="" class="link-button registration-button" id="calendar-registration" calendar-role="registration-link">Register Here</a>
+                    <div style="text-align: right;">
+                        <h3 calendar-role="date" style="text-align: right; font-size: 2rem;"></h3>
+                        <p><span calendar-role="start"></span><span calendar-role="end"></span></p>
+                    </div>
+                </div>
                 <button onclick="hideEvent()" style="position: absolute; top: 5px; right: 5px; font-size: 1.2rem;">X</button>
     </div>
     
@@ -165,7 +170,7 @@
                   
 
                   
-                  <a calendar-role="registration" class="link-button registration-button" target="_blank" href=https://github.com/ >Register Here</a>
+                  <a calendar-role="registration-link" class="link-button registration-button" target="_blank" href="https://github.com/" >Register Here</a>
                   
                   <p calendar-role="description" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis mollis diam. Fusce volutpat, risus quis lobortis tincidunt, nunc justo fringilla ligula, id consequat risus nisi nec lorem. Sed vitae lectus interdum, facilisis lorem id, semper nibh. Sed vitae orci est. Pellentesque tempus feugiat mollis. Proin in ex in dui varius dapibus. Ut placerat rutrum mauris, sit amet convallis erat finibus at. Morbi quis dignissim magna. Donec egestas suscipit ligula, ut ornare quam ullamcorper eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus id sem non nisi accumsan facilisis vitae vitae mauris. Integer enim erat, aliquet eget turpis in, pharetra interdum diam.</p>
               </div>

@@ -18,7 +18,7 @@ timeFormatter = (time) => {
     return time;
   }
   return time.replace(" ", ":00 ");
-}
+};
 
 createDateObj = (offset) => {
   const dateObj = {};
@@ -40,6 +40,7 @@ displayEvent = (x) => {
     x.parentElement.parentElement.children[0].getAttribute("date");
   const elementTime = x.parentElement.getAttribute("time");
 
+
   const hiddenElement = Array.from(
     document.querySelectorAll(`div[date='${elementDate}']`)
   ).filter(
@@ -49,20 +50,37 @@ displayEvent = (x) => {
         .innerText.replace(/(?<!:00)\s/, ":00 ") == elementTime.trim()
   )[0];
 
-  const hiddenElementDate = hiddenElement.getAttribute("date")
+  const hiddenElementDate = hiddenElement.getAttribute("date");
 
-  Array.from(["title", "start", "end"]).forEach(role => {
-    eventWindow.querySelector(`[calendar-role='${role}']`).innerText = hiddenElement.querySelector(`[calendar-role='${role}']`).innerText || '';
-  }
-  )
-  // eventWindow.innerText = hiddenElement.querySelector()
-  eventWindow.children[5].innerText = `${
+  Array.from(["title", "start", "end", "description"]).forEach((role) => {
+    eventWindow.querySelector(`[calendar-role='${role}']`).innerText =
+      hiddenElement.querySelector(`[calendar-role='${role}']`).innerText || "";
+  });
+
+  if (hiddenElement.querySelector("[calendar-role='registration-link']")) {
+    eventWindow.querySelector("[calendar-role='registration-link']").href =
+      hiddenElement.querySelector(
+        "[calendar-role='registration-link']"
+      ).href;
+    eventWindow.querySelector("[calendar-role='registration-link']").style.visibility = "visible";
+  } else {
+    eventWindow.querySelector("[calendar-role='registration-link']").href = "";
+    eventWindow.querySelector(
+      "[calendar-role='registration-link']"
+    ).style.visibility = "hidden";
+  };
+
+  eventWindow.querySelector("[calendar-role='date']").innerText = `${
     monthArray[hiddenElementDate.split("-")[1] - 1]
-  } ${hiddenElementDate.split("-")[2].slice(1,3) }, ${hiddenElementDate.split("-")[0]}`;
+  } ${hiddenElementDate.split("-")[2].slice(1, 3)}, ${
+    hiddenElementDate.split("-")[0]
+  }`;
+
   eventWindow.style.visibility = "visible";
 };
 hideEvent = () => {
   document.getElementById("event-popup").style.visibility = "hidden";
+  document.getElementById("calendar-registration").style.visibility = "hidden"
 };
 
 createCalendar = (dateObject) => {
@@ -72,9 +90,9 @@ createCalendar = (dateObject) => {
   const calendarArray = [];
 
   for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
-    let dateString = `${dateObject["Current Month"].getFullYear()}-${
-      String(dateObject["Current Month"].getMonth() + 1).padStart(2, "0")
-    }-${String(i).padStart(3, "0")}`;
+    let dateString = `${dateObject["Current Month"].getFullYear()}-${String(
+      dateObject["Current Month"].getMonth() + 1
+    ).padStart(2, "0")}-${String(i).padStart(3, "0")}`;
     const dateMatch = Array.from(
       document.querySelectorAll(`[date='${dateString}']`)
     );
@@ -82,7 +100,9 @@ createCalendar = (dateObject) => {
     let formattedTime;
     if (dateMatch.length) {
       formattedTime = dateMatch
-        .map((date) => timeFormatter(date.querySelector("[calendar-role='start']").innerText))
+        .map((date) =>
+          timeFormatter(date.querySelector("[calendar-role='start']").innerText)
+        )
         .sort();
     }
 
@@ -99,7 +119,13 @@ createCalendar = (dateObject) => {
         }>${i}</p>${dateMatch
           .map(
             (date, index) =>
-              `<p time='${formattedTime[index]}'  class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${ date.querySelector("[calendar-role='subtitle']") ? date.querySelector("[calendar-role='subtitle']").innerText :  formattedTime[index]} </span></p>`
+              `<p time='${
+                formattedTime[index]
+              }'  class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${
+                date.querySelector("[calendar-role='subtitle']")
+                  ? date.querySelector("[calendar-role='subtitle']").innerText
+                  : formattedTime[index]
+              } </span></p>`
           )
           .join("")}</div>`
       );
@@ -133,12 +159,12 @@ let monthOffset = 0;
 createCalendar(createDateObj(monthOffset));
 
 const todaysDate = new Date();
-const todaysDateString = `${todaysDate.getFullYear()}-${String(todaysDate.getMonth()+1).padStart(2, "0")}-${String(todaysDate.getDate()).padStart(3, "0")}`
+const todaysDateString = `${todaysDate.getFullYear()}-${String(
+  todaysDate.getMonth() + 1
+).padStart(2, "0")}-${String(todaysDate.getDate()).padStart(3, "0")}`;
 
-Array.from(
-  document.querySelectorAll("#event-list>div")
-).forEach(evnt => {
+Array.from(document.querySelectorAll("#event-list>div")).forEach((evnt) => {
   if (todaysDateString > evnt.getAttribute("date")) {
     evnt.style.display = "none";
   }
-})
+});
