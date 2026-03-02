@@ -78,14 +78,16 @@ nav>a {
 #navigation-div {
   display: flex;
   width: 100%;
-  padding: 0px 1rem;
+  padding: 0px 10px;
   column-gap: 1rem;
   row-gap: 2rem;
   flex-wrap: wrap;
 }
 #navigation-div span {
   gap: 1rem;
+  row-gap: 2rem;
   display: flex;
+  flex-wrap: wrap;
 }
 #navigation-div a {
   color: black;
@@ -395,7 +397,7 @@ nav>a {
 }
 
 .calendar-event-preview {
-  font-size: clamp(0.6rem, 2vw, 23px ) !important;
+  font-size: clamp(0.6rem, 2vw, 19px ) !important;
   align-content: center;
   text-align: center;
 }
@@ -632,10 +634,16 @@ svg {
   iframe {
     aspect-ratio: 1;
   }
+  .calendar-event-preview {
+  font-size: clamp(0.6rem, 2vw, 8px ) !important;
+  }
 
 }
 @media (max-width: 350px) {
   :root {
     font-size: 0.5em;
+  }
+    .calendar-event-preview {
+  font-size: clamp(0.6rem, 2vw, 5px ) !important;
   }
 }

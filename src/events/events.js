@@ -40,14 +40,13 @@ displayEvent = (x) => {
     x.parentElement.parentElement.children[0].getAttribute("date");
   const elementTime = x.parentElement.getAttribute("time");
 
-
   const hiddenElement = Array.from(
     document.querySelectorAll(`div[date='${elementDate}']`)
   ).filter(
     (e) =>
       e
         .querySelector("[calendar-role='start']")
-        .innerText.replace(/(?<!:00)\s/, ":00 ") == elementTime.trim()
+        .innerText.replace(/(?<!:\d\d)\s/, ":00 ") == elementTime.trim()
   )[0];
 
   const hiddenElementDate = hiddenElement.getAttribute("date");
