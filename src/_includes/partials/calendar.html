@@ -44,14 +44,14 @@
                   </div>
 
                   {% if event.eventtype == "event" %}
-                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;" >
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center;" >
                     <span calendar-role="start" >{{ helperFunctions.toTimeString(event.start) | replace(":00", "") }}</span><span calendar-role="end" > - {{helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span>
                 
                   {% elseif event.closed %}
-                  <p calendar-role="start" style="padding: 0px; font-size: 1.2rem; justify-self: center;">Closed<span calendar-role="end"></span></p>
+                  <p calendar-role="start" style="padding: 0px; font-size: 1rem; justify-self: center;">Closed<span calendar-role="end"></span></p>
 
                   {% else %}
-                  <p style="padding: 0px; font-size: 1.2rem; justify-self: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> {{ helperFunctions.toTimeString(event.start) | replace(":00", "") }} - {{ helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span></p>
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> {{ helperFunctions.toTimeString(event.start) | replace(":00", "") }} - {{ helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span></p>
 
                   {% endif %}
                 </p>

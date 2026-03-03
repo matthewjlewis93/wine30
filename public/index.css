@@ -397,7 +397,7 @@ nav>a {
 }
 
 .calendar-event-preview {
-  font-size: 80% !important;
+  font-size: max(5px, 75%, 0.9vw) !important;
   line-height: 125%;
   word-break: normal;
   align-content: center;
@@ -635,9 +635,6 @@ svg {
   }
   iframe {
     aspect-ratio: 1;
-  }
-  .calendar-event-preview {
-  /* font-size: clamp(0.6rem, 2vw, 8px ) !important; */
   }
 
 }
