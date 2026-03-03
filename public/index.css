@@ -347,7 +347,7 @@ nav>a {
   border-bottom: 2px solid white;
   border-inline: 1px solid white;  
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.2;
   display: flex;
   padding-top: 3px;
   flex-direction: column;
@@ -361,7 +361,7 @@ nav>a {
   border-bottom: 2px solid white;
   border-inline: 1px solid white;  
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.2;
 }
 
 .day-of-month {
@@ -397,7 +397,9 @@ nav>a {
 }
 
 .calendar-event-preview {
-  font-size: clamp(0.6rem, 2vw, 19px ) !important;
+  font-size: 80% !important;
+  line-height: 125%;
+  word-break: normal;
   align-content: center;
   text-align: center;
 }
@@ -635,7 +637,7 @@ svg {
     aspect-ratio: 1;
   }
   .calendar-event-preview {
-  font-size: clamp(0.6rem, 2vw, 8px ) !important;
+  /* font-size: clamp(0.6rem, 2vw, 8px ) !important; */
   }
 
 }
