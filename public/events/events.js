@@ -76,6 +76,7 @@ hideEvent = () => {
 };
 
 createCalendar = (dateObject) => {
+  try {
   Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
     (e) => e.removeEventListener("click", () => displayEvent(e)),
   );
@@ -143,6 +144,8 @@ createCalendar = (dateObject) => {
   );
 
   return calendarArray;
+} catch (error) 
+{alert(error)}
 };
 
 changeMonth = (amount) => {
