@@ -13,14 +13,14 @@ const monthArray = [
   "December",
 ];
 
-timeFormatter = (time) => {
+function timeFormatter (time) {
   if (time.includes(":")) {
     return time;
   }
   return time.replace(" ", ":00 ");
 };
 
-createDateObj = (offset) => {
+function createDateObj (offset) {
   const dateObj = {};
   let currentMonth = new Date(
     `${new Date().getFullYear()}, ${new Date().getMonth() + 1}, 1`,
@@ -34,7 +34,7 @@ createDateObj = (offset) => {
   return dateObj;
 };
 
-displayEvent = (x) => {
+function displayEvent (x) {
   const eventWindow = document.getElementById("event-popup");
   const elementDate =
     x.parentElement.parentElement.children[0].getAttribute("date");
@@ -71,84 +71,89 @@ displayEvent = (x) => {
 
   eventWindow.showModal();
 };
-hideEvent = () => {
+function hideEvent () {
   document.getElementById("event-popup").close();
 };
 
-createCalendar = (dateObject) => {
+function createCalendar (dateObject) {
   try {
-  Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
-    (e) => e.removeEventListener("click", () => displayEvent(e)),
-  );
-  const calendarArray = [];
+    Array.from(
+      document.querySelectorAll(".calendar-event-preview>span"),
+    ).forEach((e) => e.removeEventListener("click", () => displayEvent(e)));
+    const calendarArray = [];
 
-  for (i = 1 - dateObject["Day of 1"]; i <= dateObject["Days in Month"]; i++) {
-    let dateString = `${dateObject["Current Month"].getFullYear()}-${String(
-      dateObject["Current Month"].getMonth() + 1,
-    ).padStart(2, "0")}-${String(i).padStart(3, "0")}`;
-    const dateMatch = Array.from(
-      document.querySelectorAll(`[date='${dateString}']`),
-    );
-    // let formattedDate;
-    let formattedTime;
-    if (dateMatch.length) {
-      formattedTime = dateMatch
-        .map((date) =>
-          timeFormatter(
-            date.querySelector("[calendar-role='start']").innerText,
-          ),
-        )
-        .sort();
-    }
-
-    if (i <= 0) {
-      calendarArray.push("<div class='non-month-day' ></div");
-    } else {
-      calendarArray.push(
-        `<div class='calendar-day'><p class='day-of-month' date=${dateString} class=${
-          monthOffset === 0
-            ? new Date().getDate() === i
-              ? " todays-date"
-              : ""
-            : ""
-        }>${i}</p>${dateMatch
-          .map(
-            (date, index) =>
-              `<p time='${
-                formattedTime[index]
-              }'  class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${
-                date.querySelector("[calendar-role='subtitle']")
-                  ? date
-                      .querySelector("[calendar-role='subtitle']")
-                      .innerHTML.replaceAll("/", "/<wbr />")
-                  : formattedTime[index]
-              } </span></p>`,
-          )
-          .join("")}</div>`,
+    for (
+      let i = 1 - dateObject["Day of 1"];
+      i <= dateObject["Days in Month"];
+      i++
+    ) {
+      let dateString = `${dateObject["Current Month"].getFullYear()}-${String(
+        dateObject["Current Month"].getMonth() + 1,
+      ).padStart(2, "0")}-${String(i).padStart(3, "0")}`;
+      const dateMatch = Array.from(
+        document.querySelectorAll(`[date='${dateString}']`),
       );
+      // let formattedDate;
+      let formattedTime;
+      if (dateMatch.length) {
+        formattedTime = dateMatch
+          .map((date) =>
+            timeFormatter(
+              date.querySelector("[calendar-role='start']").innerText,
+            ),
+          )
+          .sort();
+      }
+
+      if (i <= 0) {
+        calendarArray.push("<div class='non-month-day' ></div");
+      } else {
+        calendarArray.push(
+          `<div class='calendar-day'><p class='day-of-month' date=${dateString} class=${
+            monthOffset === 0
+              ? new Date().getDate() === i
+                ? " todays-date"
+                : ""
+              : ""
+          }>${i}</p>${dateMatch
+            .map(
+              (date, index) =>
+                `<p time='${
+                  formattedTime[index]
+                }'  class='calendar-event-preview' onclick='displayEvent' ><span style='cursor: pointer; background-color: white; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 1px' >❗</span><span style='cursor: pointer; background-color: #eee; border-top-right-radius: 2px; border-bottom-right-radius: 2px; padding: 1px' > ${
+                  date.querySelector("[calendar-role='subtitle']")
+                    ? date
+                        .querySelector("[calendar-role='subtitle']")
+                        .innerHTML.replaceAll("/", "/<wbr />")
+                    : formattedTime[index]
+                } </span></p>`,
+            )
+            .join("")}</div>`,
+        );
+      }
     }
-  }
-  while (calendarArray.length != 42) {
-    calendarArray.push("<div class='non-month-day' ></div>");
-  }
-  document.getElementById("calendar-body").innerHTML = "";
-  calendarArray.forEach(
-    (e) => (document.getElementById("calendar-body").innerHTML += e),
-  );
-  document.getElementById("month-name").innerText = `${
-    monthArray[dateObject["Current Month"].getMonth()]
-  } ${dateObject["Current Month"].getFullYear()}`;
+    while (calendarArray.length != 42) {
+      calendarArray.push("<div class='non-month-day' ></div>");
+    }
+    document.getElementById("calendar-body").innerHTML = "";
+    calendarArray.forEach(
+      (e) => (document.getElementById("calendar-body").innerHTML += e),
+    );
+    document.getElementById("month-name").innerText = `${
+      monthArray[dateObject["Current Month"].getMonth()]
+    } ${dateObject["Current Month"].getFullYear()}`;
 
-  Array.from(document.querySelectorAll(".calendar-event-preview>span")).forEach(
-    (e) => e.addEventListener("click", (x) => displayEvent(e)),
-  );
+    Array.from(
+      document.querySelectorAll(".calendar-event-preview>span"),
+    ).forEach((e) => e.addEventListener("click", (x) => displayEvent(e)));
 
-  return calendarArray;
-} catch (error) 
-{alert(error)}
+    return calendarArray;
+  } catch (error) {
+    alert(error);
+  }
 };
 
-changeMonth = (amount) => {
+function changeMonth (amount) {
   monthOffset += amount;
   createCalendar(createDateObj(monthOffset));
 };
