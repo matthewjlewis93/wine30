@@ -99,6 +99,7 @@ function createCalendar(dateObject) {
     const dateMatch = Array.from(
       document.querySelectorAll(`[date='${dateString}']`),
     );
+
     dateMatch.sort((a, b) => {
       let one = a
         .querySelector("[calendar-role='start']")
@@ -122,8 +123,7 @@ function createCalendar(dateObject) {
         timeFormatter(date.querySelector("[calendar-role='start']").innerText),
       );
     }
-    console.log(formattedTime);
-    console.log(dateMatch);
+
     if (i <= 0) {
       calendarArray.push("<div class='non-month-day' ></div");
     } else {
