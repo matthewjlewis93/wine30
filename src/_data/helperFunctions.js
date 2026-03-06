@@ -28,7 +28,7 @@ module.exports = {
     if (Number(times[0]) > 12) {
       timeString += (Number(times[0]) - 12) + ":" + times[1] + " PM";
     } else {
-      timeString += times[0] + ":" + times[1] + " PM";
+      timeString += String(Number(times[0])) + ":" + times[1] + " AM";
     }
     return timeString;
   },
