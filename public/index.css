@@ -45,10 +45,27 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.page-title {
+  padding: 5rem 0px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 50px 0px 100px #30003040,
+  -50px 0 100px #30003040;
+  position: relative;
+  z-index: -1;
+  background-size: cover;
+}
+
 header {
   padding: 5px;
   background-color: #e8d8fd66;
 }
+
 nav>a {
   font-size: 1.5rem;
 }
@@ -125,7 +142,8 @@ nav>a {
   /* background-color: #ffffffbf; */
   padding: 20px 10px;
   font-size: 2rem;
-  justify-self: center;
+  /* justify-self: center; */
+  margin: 0 auto;
   max-width: 1200px;
   /* color: white; */
 }
@@ -244,7 +262,7 @@ nav>a {
 
 #hours-div {
   padding: 5px 0px;
-  margin: 10px;
+  margin: 10px auto;
   width: 80%;
   max-width: 1000px;
   min-width: fit-content;
@@ -307,7 +325,8 @@ nav>a {
   padding-top: 32px; 
   gap: 32px;
   align-items: center;
-  justify-self: center;
+  margin: 0 auto;
+  /* justify-self: center; */
 }
 
 #map-section {
@@ -489,15 +508,20 @@ a[href=''] {
   border-radius: 5px;
   gap: 2px;
 }
+
+#wine-club-page-title {
+  background-image: url('/images/Wine30-8-1.jpg'); 
+  background-position: center 60%;
+}
+
 #club-levels {
   background: linear-gradient(#22222270, #000000e0);
-  margin: 5px;
+  margin: 5px auto;
   padding: 15px;
   border-radius: 15px;
   color: white;
   border: 0.6rem solid #ffffffee;
   max-width: max-content;
-  justify-self: center;
 }
 #club-levels h4 {
   display: grid;
@@ -509,6 +533,15 @@ a[href=''] {
 #club-levels p {
   padding-inline: 1rem;
   font-size: 1.6rem;
+}
+#wine-club-signup {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 50%;
+  justify-items: left;
+  justify-self: center;
+  margin: 0 auto;
 }
 input, textarea, select {
   font-size: 1.2rem;
@@ -539,17 +572,15 @@ label {
 
 #event-title {
   background-image: url("/images/Wine30-17.jpg");
-  background-size: cover;
   background-position-y: 5%;
-  padding: 5rem 0px;
-  width: 100%;
-  max-width: 1200px;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
+ul {
+  border: 2px solid #00000040;
+  border-radius: 10px;
+  margin: 1rem;
+  background-color: #ffffff60;
+  padding: 10px 8%;
+}
 #event-title>h1{
   font-family: EB Garamond, serif;
   font-size: 7rem;

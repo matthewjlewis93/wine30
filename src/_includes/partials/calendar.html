@@ -44,7 +44,7 @@
                   </div>
 
                   {% if event.eventtype == "event" %}
-                  <p style="padding: 0px; font-size: 1rem; justify-self: center;" >
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center; margin: 0 auto;" >
                     <span calendar-role="start" >{{ helperFunctions.toTimeString(event.start) | replace(":00", "") }}</span><span calendar-role="end" > - {{helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span>
                 
                   {% elseif event.closed %}
