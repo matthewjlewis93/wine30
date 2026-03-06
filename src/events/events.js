@@ -23,9 +23,9 @@ function timeFormatter(time) {
 function createDateObj(offset) {
   const dateObj = {};
   let currentMonth = new Date(
-    `${new Date().getFullYear()}-${new Date().getMonth() + 1}-2`,
+    new Date().getFullYear(), new Date().getMonth(), 1
   );
-  
+    
   currentMonth.setMonth(currentMonth.getMonth() + offset);
   dateObj["Current Month"] = currentMonth;
   dateObj["Day of 1"] = currentMonth.getDay();
