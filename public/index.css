@@ -332,6 +332,11 @@ nav>a {
   grid-template-columns: repeat(7, 1fr);
 }
 
+#calendar svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
 #calendar-body {
   background-color: white;
 }

@@ -26,7 +26,7 @@
 <section id="calendar">
     <div id="calendar-head">
         <h2 style="grid-column: span 7;">Calendar</h2>
-        <span></span><button onclick="changeMonth(-1)"><svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#111"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg></button><h4 style="grid-column: span 3; text-align: center;" id="month-name"></h4><button onclick="changeMonth(1)"><svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#111"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></button><span></span>
+        <span></span><button onclick="changeMonth(-1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#111"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg></button><h4 style="grid-column: span 3; text-align: center;" id="month-name"></h4><button onclick="changeMonth(1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#111"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></button><span></span>
 
         <h5 class="day-name">Sun</h5>
         <h5 class="day-name">Mon</h5>
@@ -449,6 +449,33 @@
                   
                   <p style="padding: 0px; font-size: 1rem; justify-self: center;" >
                     <span calendar-role="start" >7 PM</span><span calendar-role="end" > - 10 PM</span>
+                
+                  
+                </p>
+              </div>
+          </div>
+          
+        
+        <div calendar-role="event" date=2026-03-028 >
+              <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 1rem; ">
+                  <h3 calendar-role="title" style="letter-spacing: normal; font-size: 2.5rem;">Live Music Featuring Rock Blues Band Encore</h3>
+
+                  
+                    <p hidden calendar-role="subtitle" >Encore</p>
+                  
+
+                  
+                  <p calendar-role="description" >Join us for great music from Karen and Jesse ~ The Rock Blues Band<br />Enjoy delicious wine, charcuterie boards and flatbreads with great friends!<br />Never a cover, just a great time!</p>
+              </div>
+              <div>
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
+                      <p style="font-size: 3rem; padding: 0px;">Mar</p>
+                      <h3 style="margin: 0px; letter-spacing: -2px;" >28</h3>
+                  </div>
+
+                  
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center;" >
+                    <span calendar-role="start" >10 PM</span><span calendar-role="end" > - 11 PM</span>
                 
                   
                 </p>

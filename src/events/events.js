@@ -13,18 +13,19 @@ const monthArray = [
   "December",
 ];
 
-function timeFormatter (time) {
+function timeFormatter(time) {
   if (time.includes(":")) {
     return time;
   }
   return time.replace(" ", ":00 ");
-};
+}
 
-function createDateObj (offset) {
+function createDateObj(offset) {
   const dateObj = {};
   let currentMonth = new Date(
-    `${new Date().getFullYear()}, ${new Date().getMonth() + 1}, 1`,
+    `${new Date().getFullYear()}-${new Date().getMonth() + 1}-2`,
   );
+  
   currentMonth.setMonth(currentMonth.getMonth() + offset);
   dateObj["Current Month"] = currentMonth;
   dateObj["Day of 1"] = currentMonth.getDay();
@@ -32,23 +33,28 @@ function createDateObj (offset) {
   currentMonth.setDate(0);
   dateObj["Days in Month"] = currentMonth.getDate();
   return dateObj;
-};
+}
 
-function displayEvent (x) {
+function displayEvent(x) {
   const eventWindow = document.getElementById("event-popup");
   const elementDate =
     x.parentElement.parentElement.children[0].getAttribute("date");
   const elementTime = x.parentElement.getAttribute("time");
-
   const hiddenElement = Array.from(
     document.querySelectorAll(`div[date='${elementDate}']`),
-  ).filter(
-    (e) =>
-      e
-        .querySelector("[calendar-role='start']")
-        .innerText.replace(/(?<!:\d\d)\s/, ":00 ") == elementTime.trim(),
-  )[0];
-
+  ).filter((e) => {
+    if (e.querySelector("[calendar-role='start']").innerText.includes(":"))
+      return (
+        e.querySelector("[calendar-role='start']").innerText ==
+        elementTime.trim()
+      );
+    else
+      return (
+        e
+          .querySelector("[calendar-role='start']")
+          .innerText.replace(" ", ":00 ") == elementTime.trim()
+      );
+  })[0];
   const hiddenElementDate = hiddenElement.getAttribute("date");
 
   Array.from(["title", "start", "end", "description"]).forEach((role) => {
@@ -70,13 +76,11 @@ function displayEvent (x) {
   }`;
 
   eventWindow.showModal();
-};
-function hideEvent () {
+}
+function hideEvent() {
   document.getElementById("event-popup").close();
-};
-
-function createCalendar (dateObject) {
-  try {
+}
+function createCalendar(dateObject) {
     Array.from(
       document.querySelectorAll(".calendar-event-preview>span"),
     ).forEach((e) => e.removeEventListener("click", () => displayEvent(e)));
@@ -139,27 +143,23 @@ function createCalendar (dateObject) {
     calendarArray.forEach(
       (e) => (document.getElementById("calendar-body").innerHTML += e),
     );
+    
     document.getElementById("month-name").innerText = `${
       monthArray[dateObject["Current Month"].getMonth()]
     } ${dateObject["Current Month"].getFullYear()}`;
-
     Array.from(
       document.querySelectorAll(".calendar-event-preview>span"),
     ).forEach((e) => e.addEventListener("click", (x) => displayEvent(e)));
-
+    
     return calendarArray;
-  } catch (error) {
-    alert(error);
-  }
-};
+}
 
-function changeMonth (amount) {
+function changeMonth(amount) {
   monthOffset += amount;
   createCalendar(createDateObj(monthOffset));
-};
+}
 
 let monthOffset = 0;
-
 createCalendar(createDateObj(monthOffset));
 
 const todaysDate = new Date();
