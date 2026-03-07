@@ -38,20 +38,20 @@
                   <p calendar-role="description" >{{ event.description | replace("\n", "<br />") | safe   }}</p>
               </div>
               <div>
-                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white; " >
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;  background-color: hsl(265, 89%, 70%); border-radius: 10px; aspect-ratio: 1; height: 8rem; padding-bottom: 0.8rem; color: white;" >
                       <p style="font-size: 3rem; padding: 0px;">{{ ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][event.month - 1]}}</p>
                       <h3 style="margin: 0px; letter-spacing: -2px;" >{{ event.day }}</h3>
                   </div>
 
                   {% if event.eventtype == "event" %}
-                  <p style="padding: 0px; font-size: 1rem; justify-self: center; margin: 0 auto;" >
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center; text-align: center;" >
                     <span calendar-role="start" >{{ helperFunctions.toTimeString(event.start) | replace(":00", "") }}</span><span calendar-role="end" > - {{helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span>
                 
                   {% elseif event.closed %}
-                  <p calendar-role="start" style="padding: 0px; font-size: 1rem; justify-self: center;">Closed<span calendar-role="end"></span></p>
+                  <p calendar-role="start" style="padding: 0px; font-size: 1rem; justify-self: center; text-align: center;">Closed<span calendar-role="end"></span></p>
 
                   {% else %}
-                  <p style="padding: 0px; font-size: 1rem; justify-self: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> {{ helperFunctions.toTimeString(event.start) | replace(":00", "") }} - {{ helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span></p>
+                  <p style="padding: 0px; font-size: 1rem; justify-self: center; text-align: center;"><span calendar-role="start" >Open</span><span calendar-role="end"> from: <br /> {{ helperFunctions.toTimeString(event.start) | replace(":00", "") }} - {{ helperFunctions.toTimeString(event.end) | replace(":00", "") }}</span></p>
 
                   {% endif %}
                 </p>
