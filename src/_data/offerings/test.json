@@ -1,0 +1,9 @@
+{
+  "title": "Test",
+  "order": 8,
+  "description": "This is a test offering",
+  "link": {
+    "buttonText": "github",
+    "URL": "https://github.com/matthewjlewis93?tab=repositories"
+  }
+}
