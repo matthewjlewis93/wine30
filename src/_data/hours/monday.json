@@ -1,5 +1,7 @@
 {
   "title": "Monday",
   "open": false,
-  "order": 1
+  "order": 1,
+  "openTime": "1 P.M.",
+  "closeTime": "10 P.M."
 }
