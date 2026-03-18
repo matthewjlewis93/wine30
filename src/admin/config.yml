@@ -44,13 +44,14 @@ collections:
     folder: "src/_data/hours"
     create: false
     extension: "json"
+    identifier_field: "title"
     sortable_fields: ["order"]
     delete: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "hidden" }
       - { label: "Open", name: "open", widget: "boolean" }
-      - { label: "Open Time", name: "openTime", widget: "string" }
-      - { label: "Close Time", name: "closeTime", widget: "string" }
+      - { label: "Open Time", name: "openTime", widget: "string", required: false }
+      - { label: "Close Time", name: "closeTime", widget: "string", required: false }
       - { label: "Order", name: "order", widget: "hidden"}
 
   - name: offerings
@@ -64,8 +65,13 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Display Order", name: "order", widget: "number" }
-      - { label: "Link Text", name: "buttonText", required: false, widget: "string" }
-      - { laell: "Link Page", name: "buttonLink", required: false, widget: "string" }
+      - label: "Link"
+        name: "link"
+        widget: "object"
+        collapsed: false
+        fields:
+        - { label: "Link Text", name: "buttonText", required: false, widget: "string" }
+        - { label: "URL", name: "URL", required: false, widget: "string" }
       - { label: "Image", name: "image", required: false, widget: "image" }
       - { label: "Image Alt Text", name: "alttext", required: false, widget: "string" }
 

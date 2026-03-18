@@ -26,9 +26,9 @@
           <div>
             <p>{{ item.description | replace("\n", "<br />") | safe }}</p>
           </div>
-          {% if item.buttonText and item.buttonLink %}
+          {% if item.link.buttonText and item.link.URL %}
           <br />
-          <a class="link-button" href="{{ item.buttonLink }}">{{item.buttonText}}</a>
+          <a class="link-button" href="{{ item.link.URL }}">{{item.link.buttonText}}</a>
           {% endif %}
         </div>
       </div>
